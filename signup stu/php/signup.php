@@ -32,12 +32,19 @@ $sql="INSERT INTO student(student_username,student_name,student_conno,student_em
 
 
 if(mysqli_query($conn,$sql)){
-    echo "<script type='text/javascript'>alert('Registration Completed Successfully'); location'../login/login.html';</script>";
+    echo "
+        <script type='text/javascript'>
+            alert('Registration Completed Successfully');
+            window.location.href = 'http://localhost/Mytutor/signup%20stu/signup.html'
+        </script>";
 
 }
 
 else{
-    echo "<script type='text/javascript'>alert('Registration Completed Unsuccessfully'); location'../signup.html';</script>";
+    echo "<script type='text/javascript'>
+        alert('Registration not Successfull!');
+        window.location.href = 'http://localhost/Mytutor/signup%20stu/signup.html'
+    </script>";
 }
 
 
