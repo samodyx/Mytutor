@@ -22,7 +22,7 @@ if (!$conn) {
 	<link rel="icon" type="image/png" href="assets/img/update_logo_700x_NUf_icon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Creative Tim</title>
+	<title>Light Bootstrap Dashboard by Mytutor</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -58,7 +58,7 @@ if (!$conn) {
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                    Mytutor
                 </a>
             </div>
 
@@ -273,7 +273,7 @@ echo "No result found";
                     </ul>
                 </nav>
                 <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Mytutor</a>, made with love for a better web
                 </p>
             </div>
         </footer>
