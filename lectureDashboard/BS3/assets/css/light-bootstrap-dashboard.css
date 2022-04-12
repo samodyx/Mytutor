@@ -4,8 +4,8 @@
  * Light Bootstrap Dashboard - v1.4.0
  =========================================================
 
- * Product Page: http://www.creative-tim.com/product/light-bootstrap-dashboard
- * Copyright 2017 Mytutor (http://www.creative-tim.com)
+ * Product Page: ../index.html/product/light-bootstrap-dashboard
+ * Copyright 2017 Mytutor (../index.html)
  * Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE.md)
 
  =========================================================

@@ -57,7 +57,7 @@ if (!$conn) {
 
     	<div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
+                <a href="../index.html" class="simple-text">
                     Mytutor
                 </a>
             </div>
@@ -273,7 +273,7 @@ echo "No result found";
                     </ul>
                 </nav>
                 <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="http://www.creative-tim.com">Mytutor</a>, made with love for a better web
+                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="../index.html">Mytutor</a>, made with love for a better web
                 </p>
             </div>
         </footer>
