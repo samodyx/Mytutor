@@ -12,6 +12,7 @@ $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 $count=mysqli_num_rows($result);
+echo($count);
 
 if($count>=1){
     header("location:../../studentDashboard/BS3/dashboard.html");
@@ -26,10 +27,11 @@ else{
     $countlec=mysqli_num_rows($resultlec);
 
     if($countlec>=1){
+    
         header("location:../../lectureDashboard/BS3/dashboard.html");
     }
     else{
-        echo "<script type='text/javascript'>alert('Login Unsuccessful');location='../../login/login.html';</script>";
+        echo "<script type='text/javascript'>alert('Login Unsuccessful');location='../../login/login.html';</scrip>";
     }
 
 
