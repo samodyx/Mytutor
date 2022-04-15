@@ -15,7 +15,11 @@ $count=mysqli_num_rows($result);
 echo($count);
 
 if($count>=1){
-    header("location:../../studentDashboard/BS3/dashboard.html");
+
+    
+    $_SESSION['student_username']=$username;
+    header("location:../../studentDashboard/BS3/dashboard.php");
+    
 }
 
 else{
@@ -28,7 +32,9 @@ else{
 
     if($countlec>=1){
     
-        header("location:../../lectureDashboard/BS3/dashboard.html");
+        $_SESSION['lecturer_username']=$username;
+        header("location:../../lectureDashboard/BS3/dashboard.php");
+        
     }
     else{
         echo "<script type='text/javascript'>alert('Login Unsuccessful');location='../../login/login.html';</scrip>";
