@@ -91,7 +91,6 @@
                 <p>User Profile</p>
               </a>
             </li>
-            
           </ul>
         </div>
       </div>
@@ -182,81 +181,173 @@
 
         <div class="content">
           <div class="container-fluid">
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="card">
-                          <div class="header">
-                              <h4 class="title">Enrolled Courses</h4>
-                             
-                          </div>
-                          <div class="content table-responsive table-full-width">
-                              <table class="table table-hover table-striped">
-                                  <thead>
-                                      <th>Lesson ID</th>
-                                    <th>Lesson Name</th>
-                                    <th>Category</th>
-                                    <th>Lecture</th>
-                                      <th colspan="2">Actions</th>
-                                    
-                                  </thead>
-                                  <tbody>
-                                      <tr>
-                                        <td>1</td>
-                                        <td>Dakota Rice</td>
-                                        <td>$36,738</td>
-                                        <td>Niger</td>
-                                        <td><button class="btn btn-warning">Delete</button>   <button class="btn btn-info">Update</button></td>
-                            
-                                      </tr>
-                                      <tr>
-                                        <td>2</td>
-                                        <td>Minerva Hooper</td>
-                                        <td>$23,789</td>
-                                        <td>Curaçao</td>
-                                        <td><button class="btn btn-warning">Delete</button>   <button class="btn btn-info">Update</button></td>
-                                      </tr>
-                                      <tr>
-                                        <td>3</td>
-                                        <td>Sage Rodriguez</td>
-                                        <td>$56,142</td>
-                                        <td>Netherlands</td>
-                                        <td><button class="btn btn-warning">Delete</button>   <button class="btn btn-info">Update</button></td>
-                                      </tr>
-                                      <tr>
-                                        <td>4</td>
-                                        <td>Philip Chaney</td>
-                                        <td>$38,735</td>
-                                        <td>Korea, South</td>
-                                        <td><button class="btn btn-warning">Delete</button>   <button class="btn btn-info">Update</button></td>
-                                      </tr>
-                                      <tr>
-                                        <td>5</td>
-                                        <td>Doris Greene</td>
-                                        <td>$63,542</td>
-                                        <td>Malawi</td>
-                                        <td><button class="btn btn-warning">Delete</button>   <button class="btn btn-info">Update</button></td>
-                                      </tr>
-                                      <tr>
-                                        <td>6</td>
-                                        <td>Mason Porter</td>
-                                        <td>$78,615</td>
-                                        <td>Chile</td>
-                                        <td><button class="btn btn-warning">Delete</button>   <button class="btn btn-info">Update</button></td>
-                                      </tr>
-                                  </tbody>
-                              </table>
-
-                          </div>
-                      </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="header">
+                    <h4 class="title">Add Course</h4>
                   </div>
-
-
-
-
-
+                  <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                      <thead>
+                        <th>Course ID</th>
+                        <th>Course Name</th>
+                        <th>Course Description</th>
+                        <th>Course Banner</th>
+                        <th>Course Price</th>
+                        <th colspan="2">Actions</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td><input type="text" value="test data"></td>
+                          <td><input type="text" value="test data"></td>
+                          <td><div class="form-group">
+                          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                          </div></td>
+                          <td><input type="number" value="test data"></td>
+                          <td>
+                           <button class="btn btn-info">Add Course</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
-      </div>
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="header">
+                    <h4 class="title">Add Lessons</h4>
+                  </div>
+                  <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                      <thead>
+                        <th>Lesson ID</th>
+                        <th>Lesson Name</th>
+                        <th>Course Name</th>
+                        <th>Course Material</th>
+                        <th colspan="2">Actions</th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td><input type="text" value="test data"></td>
+                          <td><input type="text" value="test data"></td>
+                          <td><div class="form-group">
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div></td>
+                          <td>
+                           <button class="btn btn-info">Add Lessons</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="header">
+                      <h4 class="title">All Lessons</h4>
+                    </div>
+                    <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">-Select Lesson-
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Test Course 01</a></li>
+                        <li><a href="#">Test Course 02</a></li>
+                        <li><a href="#">Test Course 03</a></li>
+                      </ul>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                      <table class="table table-hover table-striped">
+                        <thead>
+                          <th>Lesson ID</th>
+                          <th>Lesson Name</th>
+                          <th>Category</th>
+                          <th>Lecture</th>
+                          <th colspan="2">Actions</th>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Dakota Rice</td>
+                            <td>$36,738</td>
+                            <td>Niger</td>
+                            <td>
+                              <button class="btn btn-warning">Delete</button>
+                              <button class="btn btn-info">Update</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>2</td>
+                            <td>Minerva Hooper</td>
+                            <td>$23,789</td>
+                            <td>Curaçao</td>
+                            <td>
+                              <button class="btn btn-warning">Delete</button>
+                              <button class="btn btn-info">Update</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>3</td>
+                            <td>Sage Rodriguez</td>
+                            <td>$56,142</td>
+                            <td>Netherlands</td>
+                            <td>
+                              <button class="btn btn-warning">Delete</button>
+                              <button class="btn btn-info">Update</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>4</td>
+                            <td>Philip Chaney</td>
+                            <td>$38,735</td>
+                            <td>Korea, South</td>
+                            <td>
+                              <button class="btn btn-warning">Delete</button>
+                              <button class="btn btn-info">Update</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>5</td>
+                            <td>Doris Greene</td>
+                            <td>$63,542</td>
+                            <td>Malawi</td>
+                            <td>
+                              <button class="btn btn-warning">Delete</button>
+                              <button class="btn btn-info">Update</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>6</td>
+                            <td>Mason Porter</td>
+                            <td>$78,615</td>
+                            <td>Chile</td>
+                            <td>
+                              <button class="btn btn-warning">Delete</button>
+                              <button class="btn btn-info">Update</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <footer class="footer">
           <div class="container-fluid">
