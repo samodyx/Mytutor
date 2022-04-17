@@ -156,7 +156,7 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="studentDashboard\logout.php">
+                            <a href="Mytutor\studentDashboard\BS3\logout.php>
                                 <p>Log out</p>
                             </a>
                         </li>

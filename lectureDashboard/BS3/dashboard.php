@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -88,7 +89,7 @@
             </li>
 
             <li>
-              <a href="user.html">
+              <a href="userread.php">
                 <i class="pe-7s-user"></i>
                 <p>User Profile</p>
               </a>
@@ -171,9 +172,9 @@
                   </ul>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="logout.php">
                     <p>Log out</p>
-                  </a>
+                  </a>      </a>
                 </li>
                 <li class="separator hidden-lg"></li>
               </ul>
