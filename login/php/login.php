@@ -31,7 +31,18 @@ else{
     $countlec=mysqli_num_rows($resultlec);
 
     if($countlec>=1){
-    
+
+        $sqlQ="Select * From lecturer where lecturer_username='$username' AND lecturer_password='$password'";
+
+        $res=$conn->query($sqlQ);
+
+        $userid="";
+
+        while($row=$res->fetch_assoc()){
+            $userid= $row['lecturer_id'];
+        }
+        
+        $_SESSION['lecturerid']=$userid;
         $_SESSION['lecturer_username']=$username;
         header("location:../../lectureDashboard/BS3/dashboard.php");
         

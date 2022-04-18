@@ -1,18 +1,21 @@
 <?php
+
+session_start();
+
 // Check existence of id parameter before processing further
-if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
+if(isset($_SESSION["lecturerid"])){
     // Include config file
     require_once "config.php";
     
     // Prepare a select statement
     $sql = "SELECT * FROM lecturer WHERE id = ?";
     
-    if($stmt = mysqli_prepare($link, $sql)){
+    if($stmt = mysqli_prepare($conn, $sql)){
         // Bind variables to the prepared statement as parameters
         mysqli_stmt_bind_param($stmt, "i", $param_id);
         
         // Set parameters
-        $param_id = trim($_GET["id"]);
+        $param_id = trim($_SESSION['lecturerid']);
         
         // Attempt to execute the prepared statement
         if(mysqli_stmt_execute($stmt)){

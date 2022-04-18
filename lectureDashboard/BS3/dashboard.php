@@ -89,7 +89,7 @@
             </li>
 
             <li>
-              <a href="userread.php">
+              <a href="user.php">
                 <i class="pe-7s-user"></i>
                 <p>User Profile</p>
               </a>
