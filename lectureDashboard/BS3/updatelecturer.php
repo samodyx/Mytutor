@@ -1,8 +1,9 @@
 <?php
 include_once 'config.php';
+session_start();
 if(isset($_POST['save']))
 {	
-    $lecturer_id= $_POST["ID"]; 
+    $lecturer_id= $_SESSION["lecturerid"];
     $lecturer_name = $_POST["name"]; 
     $lecturer_username = $_POST["Username"]; 
     $lecturer_password = $_POST["Password"]; 

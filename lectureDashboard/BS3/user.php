@@ -296,16 +296,6 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                           <input
-                            type="hidden"
-                            class="form-control"
-                            placeholder="Contact Number"
-                            name="ID"
-                          />
-                        </div>
-                      </div>
 
                       <button
                         type="submit"
