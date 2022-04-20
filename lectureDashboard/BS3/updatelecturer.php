@@ -1,6 +1,8 @@
+
 <?php
 include_once 'config.php';
 session_start();
+
 if(isset($_POST['save']))
 {	
     $lecturer_id= $_SESSION["lecturerid"];

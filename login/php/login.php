@@ -12,7 +12,6 @@ $result=mysqli_query($conn,$sql);
 $row=mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 $count=mysqli_num_rows($result);
-echo($count);
 
 if($count>=1){
 
@@ -41,6 +40,8 @@ else{
         while($row=$res->fetch_assoc()){
             $userid= $row['lecturer_id'];
         }
+
+        
         
         $_SESSION['lecturerid']=$userid;
         $_SESSION['lecturer_username']=$username;

@@ -1,3 +1,37 @@
+<?php
+$server = "localhost:3308";
+$user = "root";
+$pass = "mytutor@123";
+$database = "mytutor";
+
+$conn = mysqli_connect($server, $user, $pass, $database);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT lecturer_id, lecturer_name, lecturer_username,lecturer_qualification,lecturer_description,lecturer_email,lecturer_conno FROM lecturer";
+$result = $conn->query($sql);
+
+$lecturer="name";
+session_start();
+
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    $lecturer_name = $row["lecturer_name"]; 
+$lecturer_username = $row["lecturer_username"]; 
+$lecturer_qualification = $row["lecturer_qualification"]; 
+$lecturer_description = $row["lecturer_description"]; 
+$lecturer_email = $row["lecturer_email"]; 
+$lecturer_conno = $row["lecturer_conno"];
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -195,10 +229,9 @@
                               type="text"
                               class="form-control"
                               name="name"
-                      
                               placeholder="Full Name"
-                              
-                            />
+                              value="<?php echo $lecturer_name?>" required>
+                        
                           </div>
                         </div>
                         <div class="col-md-3">
@@ -209,7 +242,8 @@
                               class="form-control"
                               placeholder="Username"
                               name="Username"
-                            />
+                              value="<?php echo $lecturer_username?>" required>
+                            
                           </div>
                         </div>
                         <div class="col-md-4">
@@ -222,7 +256,8 @@
                               class="form-control"
                               placeholder="Email"
                               name="Email"
-                            />
+                              value="<?php echo $lecturer_email?>" required>
+                            
                           </div>
                         </div>
                       </div>
@@ -232,22 +267,22 @@
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
-                            <label>Password</label>
+                            <label>New Password</label>
                             <input
                               type="password"
                               class="form-control"
-                              placeholder="Password"
+                              placeholder="New Password"
                               name="Password"
                             />
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                            <label>Confrim Password</label>
+                            <label>Confrim New Password</label>
                             <input
                               type="password"
                               class="form-control"
-                              placeholder="Confrim Password"
+                              placeholder="Confrim New Password"
                              
                             />
                           </div>
@@ -260,7 +295,8 @@
                               class="form-control"
                               placeholder="Contact Number"
                               name="Contact"
-                            />
+                              value="<?php echo $lecturer_conno?>" required>
+                            
                           </div>
                         </div>
                       </div>
@@ -274,6 +310,7 @@
                               placeholder="Here enter your qualifications"
                               value="Test description"
                               name="Qualification"
+                              value="<?php echo $lecturer_qualification?>" required
                             >
                              </textarea
                             >
@@ -290,6 +327,7 @@
                               class="form-control"
                               placeholder="Here can be your description"
                               name="Description"
+                              value="<?php echo $lecturer_description?>" required
                             >
                                </textarea
                             >
@@ -306,6 +344,7 @@
                       </button>
                       <div class="clearfix"></div>
                     </form>
+                    <a href="deletelecturer.php" class="btn btn-warning">Delete</a>
                   </div>
                 </div>
               </div>
