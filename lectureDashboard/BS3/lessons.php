@@ -1,3 +1,24 @@
+<?php
+$server = "localhost:3308";
+$user = "root";
+$pass = "mytutor@123";
+$database = "mytutor";
+
+$conn = mysqli_connect($server, $user, $pass, $database);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM course";
+$result = $conn->query($sql);
+$result2 = $conn->query($sql);
+session_start();
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,7 +75,7 @@
         <div class="sidebar-wrapper">
           <div class="logo">
             <label class="simple-text">  <?php
-              session_start();
+              
               echo "Welcome  ".$_SESSION['lecturer_username'];
               ?>  </label>
           </div>
@@ -66,12 +87,12 @@
                 <p>Students</p>
               </a>
             </li>
-            <li>
+           
               <a href="lessons.html">
                 <li class="active">
                   <i class="pe-7s-notebook"></i>
                   <p>Lessons</p>
-                </li></a
+               </a
               >
             </li>
             <li>
@@ -208,9 +229,6 @@
                           <td><input type="text" name="course_name" ></td>
                           <td><input type="text" name="course_description" ></td>
                           <td><div class="form-group">
-                            Hello,
-                            I got this as a gift pack, So I have no idea about this product's condition.
-                            Note: I haven't used this product at all  
                           </div></td>
                           <td><input type="text" name="course_type"></td>
                           <td><input type="text" name="course_price"></td>
@@ -235,6 +253,7 @@
                 <div class="card">
                   <div class="header">
                     <h4 class="title">Add Lessons</h4>
+
                   </div>
                   <div class="content table-responsive table-full-width">
                     <table class="table table-hover table-striped">
@@ -243,18 +262,29 @@
                         <th>Lesson Name</th>
                         <th>Course Name</th>
                         <th>Course Material</th>
-                        <th colspan="2">Actions</th>
+                        <th colspan="1">Actions</th>
                       </thead>
                       <tbody>
                         <tr>
-                          <td>1</td>
-                          <td><input type="text" value="test data"></td>
-                          <td><input type="text" value="test data"></td>
-                          <td><div class="form-group">
-                            <!-- <input type="file" class="form-control-file" id="exampleFormControlFile1"> -->
-                            </div></td>
+                          <td><input type="text" value="test data" class="simple-text"></td>
                           <td>
+                          <select>
+                          
+                          <?php
+                             while($row = mysqli_fetch_assoc($result)) {
+                             echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
+                              }
+                              ?>
+                          </select>
+                          </td>
+                          
+                          <td><div class="form-group">
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                          </td>
+                           <td>
                            <button class="btn btn-info">Add Lessons</button>
+                           
                           </td>
                         </tr>
                       </tbody>
@@ -271,13 +301,19 @@
                   <div class="card">
                     <div class="header">
                       <h4 class="title">All Lessons</h4>
+
                     </div>
                     <div class="dropdown">
                       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">-Select Lesson-
                       <ul class="dropdown-menu">
-                        <li><a href="#">Test Course 01</a></li>
-                        <li><a href="#">Test Course 02</a></li>
-                        <li><a href="#">Test Course 03</a></li>
+                      <select>
+                          
+                          <?php
+                             while($row = mysqli_fetch_assoc($result2)) {
+                             echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
+                              }
+                              ?>
+                          </select>
                       </ul>
                     </div>
                     <div class="content table-responsive table-full-width">

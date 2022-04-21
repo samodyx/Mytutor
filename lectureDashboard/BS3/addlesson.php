@@ -3,12 +3,11 @@ include_once 'config.php';
 if(isset($_POST['save']))
 {	 
 	 $course_name = $_POST['course_name'];
-	 $course_description = $_POST['course_description'];
-	//  $course_image = $_POST['course_image'];
-	 $course_type = $_POST['course_type'];
-     $course_price = $_POST['course_price'];
-	 $sql = "INSERT INTO course(course_name,course_description,course_type,course_price)
-	 VALUES ('$course_name','$course_description','$course_type','$course_price')";
+	 $lesson_link = $_POST['lesson_link'];
+	 $course_name = $_POST['course_name'];
+	 $lesson_materials = $_POST['lesson_materials'];
+	 $sql = "INSERT INTO lesson(course_name,lessson_link,lesson_materials)
+	 VALUES ('$course_name','$lessson_link','$lesson_materials')";
 	 if (mysqli_query($conn, $sql)) {
 		die("New record created successfully !") ;
 	 } else {

@@ -69,7 +69,7 @@
               </a>
             </li>
             <li>
-              <a href="lessons.html">
+              <a href="lessons.php">
                 <i class="pe-7s-notebook"></i>
                 <p>Lessons</p>
               </a>
