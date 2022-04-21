@@ -39,11 +39,13 @@
 
 
     <div class="sidebar-wrapper">
-        <div class="logo">
-            <a href="#" class="simple-text">
-                Student Name
-            </a>
-        </div>
+    <div class="logo">
+          <label class="simple-text">  <?php
+          session_start();
+            echo "Welcome  ".$_SESSION['student_username'];
+            ?>  </label>
+          </div>
+
 
         <ul class="nav">
             <li class="active">

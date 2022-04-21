@@ -9,21 +9,23 @@ $conn = mysqli_connect($server, $user, $pass, $database);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "SELECT * FROM lecturer";
-$result = $conn->query($sql);
-
 session_start();
 
+$uid=$_SESSION['student_id'];
 
-  // output data of each row
+$sql = "SELECT * FROM student WHERE student_id=$uid";
+$result = $conn->query($sql);
+
+
+
+
+
   while($row = $result->fetch_assoc()) {
-    $lecturer_name = $row["lecturer_name"]; 
-$lecturer_username = $row["lecturer_username"]; 
-$lecturer_qualification = $row["lecturer_qualification"]; 
-$lecturer_description = $row["lecturer_description"]; 
-$lecturer_email = $row["lecturer_email"]; 
-$lecturer_conno = $row["lecturer_conno"];
+    $student_name = $row["student_name"]; 
+$student_username = $row["student_username"]; 
+$student_email = $row["student_email"]; 
+$student_conno = $row["student_conno"];
+$student_birthday = $row["student_birthday"];
   }
 
 $conn->close();
@@ -39,7 +41,7 @@ $conn->close();
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Lecture Dashboard</title>
+    <title>Student Dashboard</title>
 
     <meta
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
@@ -79,12 +81,12 @@ $conn->close();
       <div
         class="sidebar"
         data-color="blue"
-        data-image="assets/img/lecturedashboard.jpg"
+        data-image="assets/img/studentdashboard.jpg"
       >
         <div class="sidebar-wrapper">
           <div class="logo">
           <label class="simple-text">  <?php
-            echo "Welcome  ".$_SESSION['lecturer_username'];
+            echo "Welcome  ".$_SESSION['student_username'];
             ?>  </label>
           </div>
 
@@ -218,7 +220,7 @@ $conn->close();
                     <h4 class="title">Edit Profile</h4>
                   </div>
                   <div class="content">
-                  <form method="post" action="updatelecturer.php">
+                  <form method="post" action="updatestudent.php">
                       <div class="row">
                         <div class="col-md-5">
                           <div class="form-group">
@@ -228,7 +230,7 @@ $conn->close();
                               class="form-control"
                               name="name"
                               placeholder="Full Name"
-                              value="<?php echo $lecturer_name?>" required>
+                              value="<?php echo $student_name?>" required>
                         
                           </div>
                         </div>
@@ -240,7 +242,7 @@ $conn->close();
                               class="form-control"
                               placeholder="Username"
                               name="Username"
-                              value="<?php echo $lecturer_username?>" required>
+                              value="<?php echo $student_username?>" required>
                             
                           </div>
                         </div>
@@ -254,7 +256,7 @@ $conn->close();
                               class="form-control"
                               placeholder="Email"
                               name="Email"
-                              value="<?php echo $lecturer_email?>" required>
+                              value="<?php echo $student_email?>" required>
                             
                           </div>
                         </div>
@@ -293,46 +295,24 @@ $conn->close();
                               class="form-control"
                               placeholder="Contact Number"
                               name="Contact"
-                              value="<?php echo $lecturer_conno?>" required>
+                              value="<?php echo $student_conno?>" required>
                             
                           </div>
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-2">
                           <div class="form-group">
-                            <label>Qualifications</label>
-                            <textarea
-                              rows="5"
+                            <label>Birthday</label>
+                            <input
+                              type="date"
                               class="form-control"
-                              placeholder="Here enter your qualifications"
-                              value="Test description"
-                              name="Qualification"
-                              value="<?php echo $lecturer_qualification?>" required
-                            >
-                             </textarea
-                            >
+                              placeholder="Birthday"
+                              name="Birthday"
+                              >
                           </div>
                         </div>
                       </div>
-
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group">
-                            <label>About Me</label>
-                            <textarea
-                              rows="5"
-                              class="form-control"
-                              placeholder="Here can be your description"
-                              name="Description"
-                              value="<?php echo $lecturer_description?>" required
-                            >
-                               </textarea
-                            >
-                          </div>
-                        </div>
-                      </div>
-
                       <button
                         type="submit"
                         name="save"
@@ -342,7 +322,7 @@ $conn->close();
                       </button>
                       <div class="clearfix"></div>
                     </form>
-                    <a href="deletelecturer.php" class="btn btn-warning">Delete</a>
+                    <a href="deletestudent.php" class="btn btn-warning">Delete</a>
                   </div>
                 </div>
               </div>

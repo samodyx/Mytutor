@@ -22,7 +22,7 @@ if (!$conn) {
 	<link rel="icon" type="image/png" href="assets/img/update_logo_700x_NUf_icon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Mytutor</title>
+	<title>Lecture Dashboard</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -62,7 +62,10 @@ if (!$conn) {
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="../index.html" class="simple-text">
-                    Mytutor
+                <label class="simple-text">  <?php
+                session_start();
+            echo "Welcome  ".$_SESSION['lecturer_username'];
+            ?>  </label>
                 </a>
             </div>
 
@@ -74,7 +77,7 @@ if (!$conn) {
               </a>
             </li>
             <li>
-              <a href="lessons.html">
+              <a href="lessons.php">
                 <i class="pe-7s-notebook"></i>
                 <p>Lessons</p>
               </a>
@@ -94,7 +97,7 @@ if (!$conn) {
             </li>
 
             <li>
-              <a href="user.html">
+              <a href="user.php">
                 <i class="pe-7s-user"></i>
                 <p>User Profile</p>
               </a>

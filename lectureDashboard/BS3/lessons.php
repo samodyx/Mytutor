@@ -53,7 +53,10 @@
       >
         <div class="sidebar-wrapper">
           <div class="logo">
-            <a href="#" class="simple-text"> Lecture Name </a>
+            <label class="simple-text">  <?php
+              session_start();
+              echo "Welcome  ".$_SESSION['lecturer_username'];
+              ?>  </label>
           </div>
 
           <ul class="nav">
@@ -205,7 +208,9 @@
                           <td><input type="text" name="course_name" ></td>
                           <td><input type="text" name="course_description" ></td>
                           <td><div class="form-group">
-                          <!-- <input type="file" class="form-control-file" id="exampleFormControlFile1"> -->
+                            Hello,
+                            I got this as a gift pack, So I have no idea about this product's condition.
+                            Note: I haven't used this product at all  
                           </div></td>
                           <td><input type="text" name="course_type"></td>
                           <td><input type="text" name="course_price"></td>

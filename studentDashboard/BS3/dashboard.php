@@ -36,14 +36,7 @@
 <div class="wrapper">
     <div class="sidebar" data-color="blue" data-image="assets/img/studentdashboard.jpg">
 
-    <!--
-
-        Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
-        Tip 2: you can also add an image using data-image tag
-
-    -->
-
-    	<div class="sidebar-wrapper">
+     	<div class="sidebar-wrapper">
             <div class="logo">
             <label class="simple-text">  <?php
             session_start();
@@ -59,7 +52,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="user.php">
                         <i class="pe-7s-user"></i>
                         <p>User Profile</p>
                     </a>
@@ -156,9 +149,9 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="Mytutor\studentDashboard\BS3\logout.php>
-                                <p>Log out</p>
-                            </a>
+                        <a href="logout.php">
+                    <p>Log out</p>
+                  </a>
                         </li>
 						<li class="separator hidden-lg"></li>
                     </ul>

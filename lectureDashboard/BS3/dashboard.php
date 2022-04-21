@@ -53,13 +53,13 @@
         data-image="assets/img/lecturedashboard.jpg"
       >
         <div class="sidebar-wrapper">
-          <div class="logo">
-            
-            <label class="simple-text">  <?php
-            session_start();
+        <div class="logo">
+          <label class="simple-text">  <?php
+          session_start();
             echo "Welcome  ".$_SESSION['lecturer_username'];
             ?>  </label>
           </div>
+
         
           <ul class="nav">
             <li class="active">
