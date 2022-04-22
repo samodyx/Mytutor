@@ -202,7 +202,6 @@ $('[data-toggle="tooltip"]').tooltip();
 <h2 class="pull-left">Student List</h2>
 </div>
 <?php
-include_once 'config.php';
 $result = mysqli_query($conn,"SELECT * FROM student");
 ?>
 <?php

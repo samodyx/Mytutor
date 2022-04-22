@@ -50,8 +50,6 @@ session_start();
       rel="stylesheet"
     />
 
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
 
     <!--     Fonts and icons     -->
     <link
@@ -82,13 +80,13 @@ session_start();
 
           <ul class="nav">
             <li>
-              <a href="#">
+              <a href="table.php">
                 <i class="pe-7s-users"></i>
                 <p>Students</p>
               </a>
             </li>
            
-              <a href="lessons.html">
+              <a href="lessons.php">
                 <li class="active">
                   <i class="pe-7s-notebook"></i>
                   <p>Lessons</p>
@@ -110,7 +108,7 @@ session_start();
             </li>
 
             <li>
-              <a href="user.html">
+              <a href="user.php">
                 <i class="pe-7s-user"></i>
                 <p>User Profile</p>
               </a>
@@ -202,11 +200,11 @@ session_start();
             </div>
           </div>
         </nav>
-
+<!-- ADD COURSES -->
         <div class="content">
           <div class="container-fluid">
             <div class="row">
-              <form method="post" action="addcourse.php">
+              <form method="post" action="uploadcourseimage.php" enctype="multipart/form-data">
               <div class="col-md-12">
                 <div class="card">
                   <div class="header">
@@ -221,15 +219,18 @@ session_start();
                         <th>Course Banner</th>
                         <th>Course Type</th>
                         <th>Course Price</th>
-                        <th colspan="2">Actions</th>
+                        <th colspan="1">Actions</th>
                       </thead>
                       <tbody>
                         <tr>
-                          <!-- <td>1</td> -->
                           <td><input type="text" name="course_name" ></td>
                           <td><input type="text" name="course_description" ></td>
-                          <td><div class="form-group">
-                          </div></td>
+                          <td><div class="form-group" >
+
+                            <input type="file" class="form-control-file" name="course_image">
+                            </div>
+                          </td>
+                                                   
                           <td><input type="text" name="course_type"></td>
                           <td><input type="text" name="course_price"></td>
                           <td>
@@ -246,9 +247,10 @@ session_start();
             </form>
             </div>
           </div>
-
+<!-- ADD LESSON -->
           <div class="container-fluid">
             <div class="row">
+            <form method="post" action="addlesson.php">
               <div class="col-md-12">
                 <div class="card">
                   <div class="header">
@@ -261,29 +263,29 @@ session_start();
                         <!-- <th>Lesson ID</th> -->
                         <th>Lesson Name</th>
                         <th>Course Name</th>
+                        <th>Lesson Link</th>
                         <th>Course Material</th>
                         <th colspan="1">Actions</th>
                       </thead>
                       <tbody>
                         <tr>
-                          <td><input type="text" value="test data" class="simple-text"></td>
+                          <td><input type="text" name="lesson_name" ></td>
                           <td>
-                          <select>
-                          
-                          <?php
+                          <select name="course_name">
+                              <?php
                              while($row = mysqli_fetch_assoc($result)) {
                              echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
                               }
                               ?>
                           </select>
                           </td>
-                          
+                          <td><input type="text" name="lesson_link"></td>
                           <td><div class="form-group">
                             <input type="file" class="form-control-file" id="exampleFormControlFile1">
                             </div>
                           </td>
                            <td>
-                           <button class="btn btn-info">Add Lessons</button>
+                           <button class="btn btn-info"<input type="submit" name="save" value="submit">Add Lessons</button>
                            
                           </td>
                         </tr>
@@ -302,93 +304,56 @@ session_start();
                     <div class="header">
                       <h4 class="title">All Lessons</h4>
 
-                    </div>
-                    <div class="dropdown">
-                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">-Select Lesson-
-                      <ul class="dropdown-menu">
-                      <select>
-                          
-                          <?php
+                   
+                    <select class="box" aria-label="Default select example">
+                      <option selected>-Select the lesson-</option>
+                      <?php
                              while($row = mysqli_fetch_assoc($result2)) {
                              echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
                               }
                               ?>
-                          </select>
-                      </ul>
+                                          </select>
+                                         </ul>
                     </div>
                     <div class="content table-responsive table-full-width">
-                      <table class="table table-hover table-striped">
-                        <thead>
-                          <th>Lesson ID</th>
+                    <?php
+$result = mysqli_query($conn,"SELECT lesson_id,course_name,lesson_link,lesson_materials FROM lesson");
+?>
+<?php
+if (mysqli_num_rows($result) > 0) {
+?>
+<table class='table table-bordered table-striped'>
+<th>Lesson ID</th>
                           <th>Lesson Name</th>
-                          <th>Category</th>
-                          <th>Lecture</th>
+                          <th>Course Name</th>
                           <th colspan="2">Actions</th>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>1</td>
-                            <td>Dakota Rice</td>
-                            <td>$36,738</td>
-                            <td>Niger</td>
-                            <td>
+<?php
+$i=0;
+while($row = mysqli_fetch_array($result)) {
+?>
+<tr>
+<td><?php echo $row["lesson_id"]; ?></td>
+<td><?php echo $row["course_name"]; ?></td>
+<td><?php echo $row["lesson_link"]; ?></td>
+<td><?php echo $row["lesson_materials"]; ?></td>
+<td>
                               <button class="btn btn-warning">Delete</button>
                               <button class="btn btn-info">Update</button>
                             </td>
-                          </tr>
-                          <tr>
-                            <td>2</td>
-                            <td>Minerva Hooper</td>
-                            <td>$23,789</td>
-                            <td>Curaçao</td>
-                            <td>
-                              <button class="btn btn-warning">Delete</button>
-                              <button class="btn btn-info">Update</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>3</td>
-                            <td>Sage Rodriguez</td>
-                            <td>$56,142</td>
-                            <td>Netherlands</td>
-                            <td>
-                              <button class="btn btn-warning">Delete</button>
-                              <button class="btn btn-info">Update</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>4</td>
-                            <td>Philip Chaney</td>
-                            <td>$38,735</td>
-                            <td>Korea, South</td>
-                            <td>
-                              <button class="btn btn-warning">Delete</button>
-                              <button class="btn btn-info">Update</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>5</td>
-                            <td>Doris Greene</td>
-                            <td>$63,542</td>
-                            <td>Malawi</td>
-                            <td>
-                              <button class="btn btn-warning">Delete</button>
-                              <button class="btn btn-info">Update</button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>6</td>
-                            <td>Mason Porter</td>
-                            <td>$78,615</td>
-                            <td>Chile</td>
-                            <td>
-                              <button class="btn btn-warning">Delete</button>
-                              <button class="btn btn-info">Update</button>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+</tr>
+
+<?php
+$i++;
+}
+?>
+</table>
+<?php
+}
+else{
+echo "No lesson found";
+}
+?>
+                                          </div>
                   </div>
                 </div>
               </div>
