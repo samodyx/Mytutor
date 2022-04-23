@@ -16,14 +16,6 @@ $result = $conn->query($sql);
 session_start();
 
 
-while($_GET = mysqli_fetch_assoc($result)) {
-$course_name = $_GET["course_name"]; 
-$course_description = $_GET["course_description"]; 
-$course_image = $_GET["course_image"]; 
-$course_type = $_GET["course_type"]; 
-$course_price = $_GET["course_price"]; 
-  }
-
 $conn->close();
 ?>
 
@@ -92,21 +84,35 @@ $conn->close();
                 <div class="owl-carousel active_course owl-loaded owl-drag">
                     <div class="owl-stage-outer">
                         <div class="owl-stage" style="transform: translate3d(-1520px, 0px, 0px); transition: all 1.5s ease 0s; width: 3420px;">
+
+                        <?php
+
+while($row = mysqli_fetch_assoc($result)) {
+$course_name = $row["course_name"]; 
+$course_description = $row["course_description"]; 
+$course_image ="./lectureDashboard/BS3/uploads/".$row["course_image"]; 
+$course_type = $row["course_type"]; 
+$course_price = $row["course_price"]; 
+
+
+?>
                             <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
                                 <div class="single_course">
+ 
                                     <div class="course_head">
-                                        <!-- <img class="img-fluid" src="<?php echo $course_image?>""alt="" /> -->
+                                    
+                                    <img class="img-fluid imageCourse" src="<?php echo $course_image?>" alt="" />
                                     </div>
                                     <div class="course_content">
-                                        <span class="price" value="<?php echo $course_price?>" required></span>
+                                        <span class="price" required><?php echo $course_price?> LKR</span>
                                         <span class="tag mb-4 d-inline-block" value="<?php echo $course_type?>" required> </span>
                                         <h4 class="mb-3">
-                                            <a href="#" value="<?php echo $course_name?>" required></a>
+                                            <a href="#" required><?php echo $course_name?></a>
                                         </h4>
                                         <p>
-                                        <a  value="<?php echo $course_description?>" required> </a>
+                                        <a required><?php echo $course_description?></a>
                                         </p>
-                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
+                                        <!-- <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
                                             <div class="authr_meta">
                                                 <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
                                                 <span class="d-inline-block ml-2">Cameron</span>
@@ -119,258 +125,13 @@ $conn->close();
                                                     <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
                                                 </span>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
-                            <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
-                                <div class="single_course">
-                                    <div class="course_head">
-                                        <img class="img-fluid" src="https://via.placeholder.com/350x280/87CEFA/000000" alt="" />
-                                    </div>
-                                    <div class="course_content">
-                                        <span class="price">2500 LKR</span>
-                                        <span class="tag mb-4 d-inline-block">design</span>
-                                        <h4 class="mb-3">
-                                            <a href="#">Social Media Network</a>
-                                        </h4>
-                                        <p>
-                                            One make creepeth man bearing their one firmament won't fowl meat over sea
-                                        </p>
-                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                                            <div class="authr_meta">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
-                                                <span class="d-inline-block ml-2">Cameron</span>
-                                            </div>
-                                            <div class="mt-lg-0 mt-3">
-                                                <span class="meta_info mr-4">
-                                                    <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                                </span>
-                                                <span class="meta_info">
-                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
-                                <div class="single_course">
-                                    <div class="course_head">
-                                        <img class="img-fluid" src="https://via.placeholder.com/350x280/FF7F50/000000" alt="" />
-                                    </div>
-                                    <div class="course_content">
-                                        <span class="price">2500 LKR</span>
-                                        <span class="tag mb-4 d-inline-block">design</span>
-                                        <h4 class="mb-3">
-                                            <a href="#">Computer Engineering</a>
-                                        </h4>
-                                        <p>
-                                            One make creepeth man bearing their one firmament won't fowl meat over sea
-                                        </p>
-                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                                            <div class="authr_meta">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" />
-                                                <span class="d-inline-block ml-2">Cameron</span>
-                                            </div>
-                                            <div class="mt-lg-0 mt-3">
-                                                <span class="meta_info mr-4">
-                                                    <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                                </span>
-                                                <span class="meta_info">
-                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item" style="width: 350px; margin-right: 30px;">
-                                <div class="single_course">
-                                    <div class="course_head">
-                                        <img class="img-fluid" src="https://via.placeholder.com/350x280/20B2AA/000000" alt="" />
-                                    </div>
-                                    <div class="course_content">
-                                        <span class="price">2500 LKR</span>
-                                        <span class="tag mb-4 d-inline-block">design</span>
-                                        <h4 class="mb-3">
-                                            <a href="#">Custom Product Design</a>
-                                        </h4>
-                                        <p>
-                                            One make creepeth man bearing their one firmament won't fowl meat over sea
-                                        </p>
-                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                                            <div class="authr_meta">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" />
-                                                <span class="d-inline-block ml-2">Cameron</span>
-                                            </div>
-                                            <div class="mt-lg-0 mt-3">
-                                                <span class="meta_info mr-4">
-                                                    <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                                </span>
-                                                <span class="meta_info">
-                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item active" style="width: 350px; margin-right: 30px;">
-                                <div class="single_course">
-                                    <div class="course_head">
-                                        <img class="img-fluid" src="https://via.placeholder.com/350x280/8A2BE2/000000" alt="" />
-                                    </div>
-                                    <div class="course_content">
-                                        <span class="price">2500 LKR</span>
-                                        <span class="tag mb-4 d-inline-block">design</span>
-                                        <h4 class="mb-3">
-                                            <a href="#">Social Media Network</a>
-                                        </h4>
-                                        <p>
-                                            One make creepeth man bearing their one firmament won't fowl meat over sea
-                                        </p>
-                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                                            <div class="authr_meta">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="" />
-                                                <span class="d-inline-block ml-2">Cameron</span>
-                                            </div>
-                                            <div class="mt-lg-0 mt-3">
-                                                <span class="meta_info mr-4">
-                                                    <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                                </span>
-                                                <span class="meta_info">
-                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item active" style="width: 350px; margin-right: 30px;">
-                                <div class="single_course">
-                                    <div class="course_head">
-                                        <img class="img-fluid" src="https://via.placeholder.com/350x280/008B8B/000000" alt="" />
-                                    </div>
-                                    <div class="course_content">
-                                        <span class="price">2500 LKR</span>
-                                        <span class="tag mb-4 d-inline-block">design</span>
-                                        <h4 class="mb-3">
-                                            <a href="#">Computer Engineering</a>
-                                        </h4>
-                                        <p>
-                                            One make creepeth man bearing their one firmament won't fowl meat over sea
-                                        </p>
-                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                                            <div class="authr_meta">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="" />
-                                                <span class="d-inline-block ml-2">Cameron</span>
-                                            </div>
-                                            <div class="mt-lg-0 mt-3">
-                                                <span class="meta_info mr-4">
-                                                    <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                                </span>
-                                                <span class="meta_info">
-                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned active" style="width: 350px; margin-right: 30px;">
-                                <div class="single_course">
-                                    <div class="course_head">
-                                        <img class="img-fluid" src="https://via.placeholder.com/350x280/FF69B4/000000" alt="" />
-                                    </div>
-                                    <div class="course_content">
-                                        <span class="price">2500 LKR</span>
-                                        <span class="tag mb-4 d-inline-block">design</span>
-                                        <h4 class="mb-3">
-                                            <a href="#">Custom Product Design</a>
-                                        </h4>
-                                        <p>
-                                            One make creepeth man bearing their one firmament won't fowl meat over sea
-                                        </p>
-                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                                            <div class="authr_meta">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" />
-                                                <span class="d-inline-block ml-2">Cameron</span>
-                                            </div>
-                                            <div class="mt-lg-0 mt-3">
-                                                <span class="meta_info mr-4">
-                                                    <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                                </span>
-                                                <span class="meta_info">
-                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
-                                <div class="single_course">
-                                    <div class="course_head">
-                                        <img class="img-fluid" src="https://via.placeholder.com/350x280/20B2AA/000000" alt="" />
-                                    </div>
-                                    <div class="course_content">
-                                        <span class="price">2500 LKR</span>
-                                        <span class="tag mb-4 d-inline-block">design</span>
-                                        <h4 class="mb-3">
-                                            <a href="#">Social Media Network</a>
-                                        </h4>
-                                        <p>
-                                            One make creepeth man bearing their one firmament won't fowl meat over sea
-                                        </p>
-                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                                            <div class="authr_meta">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="" />
-                                                <span class="d-inline-block ml-2">Cameron</span>
-                                            </div>
-                                            <div class="mt-lg-0 mt-3">
-                                                <span class="meta_info mr-4">
-                                                    <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                                </span>
-                                                <span class="meta_info">
-                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
-                                <div class="single_course">
-                                    <div class="course_head">
-                                        <img class="img-fluid" src="https://via.placeholder.com/350x280/#FFA07A/000000" alt="" />
-                                    </div>
-                                    <div class="course_content">
-                                        <span class="price">2500 LKR</span>
-                                        <span class="tag mb-4 d-inline-block">design</span>
-                                        <h4 class="mb-3">
-                                            <a href="#">Computer Engineering</a>
-                                        </h4>
-                                        <p>
-                                            One make creepeth man bearing their one firmament won't fowl meat over sea
-                                        </p>
-                                        <div class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
-                                            <div class="authr_meta">
-                                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" />
-                                                <span class="d-inline-block ml-2">Cameron</span>
-                                            </div>
-                                            <div class="mt-lg-0 mt-3">
-                                                <span class="meta_info mr-4">
-                                                    <a href="#"> <i class="ti-user mr-2"></i>25 </a>
-                                                </span>
-                                                <span class="meta_info">
-                                                    <a href="#"> <i class="ti-heart mr-2"></i>35 </a>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+}?>
+
                         </div>
                     </div>
                 </div>
