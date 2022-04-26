@@ -70,11 +70,42 @@ else{
         
     }
     else{
-        echo "<script type='text/javascript'>alert('Login Unsuccessful');location='../../login/login.html';</scrip>";
+
+        $sqllec="SELECT * from admin where admin_username='$username' AND admin_password='$password'";
+    $resultlec=mysqli_query($conn,$sqllec);
+
+    $rowlec=mysqli_fetch_array($resultlec,MYSQLI_ASSOC);
+
+    $countlec=mysqli_num_rows($resultlec);
+
+    if($countlec>=1){
+
+        $sqlQ="Select * From admin where admin_username='$username' AND admin_password='$password'";
+
+        $res=$conn->query($sqlQ);
+
+        $userid="";
+
+        while($row=$res->fetch_assoc()){
+            $userid= $row['admin_id'];
+        }
+
+        
+        
+        $_SESSION['adminid']=$userid;
+        $_SESSION['admin_username']=$username;
+        header("location:../../adminDashboard/BS3/dashboard.php");
+    }
+    
+    
+    
+    
+    {
+        echo "<script type='text/javascript'>alert('Login Unsuccessful');location='../../login/login.html';</script>";
     }
 
 
+    }
 }
-
 
 ?>

@@ -58,7 +58,7 @@ $conn->close();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
 
         <!-- Libraries Stylesheet -->
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">  
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
 
@@ -124,7 +124,7 @@ $conn->close();
 while($row = mysqli_fetch_assoc($result)) {
 $course_name = $row["course_name"]; 
 $course_description = $row["course_description"]; 
-$course_image ="./lectureDashboard/BS3/uploads/".$row["course_image"]; 
+$course_image ="lectureDashboard/BS3/uploads/".$row["course_image"]; 
 $course_type = $row["course_type"]; 
 $course_price = $row["course_price"]; 
 
@@ -134,7 +134,6 @@ $course_price = $row["course_price"];
                                 <div class="single_course">
  
                                     <div class="course_head">
-                                    
                                     <img class="img-fluid" src="<?php echo $course_image?>" alt="" />
                                     </div>
                                     <div class="course_content">
