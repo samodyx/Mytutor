@@ -187,7 +187,7 @@ $rowcountlecture=mysqli_num_rows($result);
               
               
                 <li>
-                  <a href="#">
+                  <a href="logout.php">
                     <p>Log out</p>
                   </a>
                 </li>

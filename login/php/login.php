@@ -32,6 +32,7 @@ if($count>=1){
         while($row=$res->fetch_assoc()){
             $userid= $row['student_id'];
         }
+        
 
         
         
@@ -39,6 +40,10 @@ if($count>=1){
     $_SESSION['student_username']=$username;
     header("location:../../studentDashboard/BS3/dashboard.php");
     
+}
+else{
+    echo "<script type='text/javascript'>alert('One of entered elements are wrong! Please check the username or password and try again!!');</script>";
+
 }
 }
 
@@ -69,6 +74,7 @@ else{
         header("location:../../lectureDashboard/BS3/dashboard.php");
         
     }
+    
     else{
 
         $sqllec="SELECT * from admin where admin_username='$username' AND admin_password='$password'";
@@ -97,7 +103,10 @@ else{
         header("location:../../adminDashboard/BS3/dashboard.php");
     }
     
+    else{
+        echo "<script type='text/javascript'>alert('One of entered elements are wrong! Please check the username or password and try again!!');</script>";
     
+    }
     
     
     {

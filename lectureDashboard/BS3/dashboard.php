@@ -35,11 +35,11 @@
 
     <!--     Fonts and icons     -->
     <link
-      href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+      href="http:
       rel="stylesheet"
     />
     <link
-      href="http://fonts.googleapis.com/css?family=Roboto:400,700,300"
+      href="http:
       rel="stylesheet"
       type="text/css"
     />
@@ -81,7 +81,7 @@
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="http:
                 <!--update this link to Mytutor link-->
                 <i class="pe-7s-video"></i>
                 <p>Live Lectures</p>
@@ -486,7 +486,7 @@
               <script>
                 document.write(new Date().getFullYear());
               </script>
-              <a href="http://www.creative-tim.com">Creative Tim</a>, made with
+              <a href="http:
               love for a better web
             </p>
           </div>
@@ -508,7 +508,7 @@
   <!--  Google Maps Plugin    -->
   <script
     type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
+    src="https:
   ></script>
 
   <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
