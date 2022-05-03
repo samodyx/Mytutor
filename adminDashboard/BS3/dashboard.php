@@ -116,7 +116,7 @@ $rowcountlecture=mysqli_num_rows($result);
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="addcourse.php">
                 <i class="pe-7s-notebook"></i>
                 <p>Courses</p>
               </a>

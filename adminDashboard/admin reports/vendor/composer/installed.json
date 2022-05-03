@@ -1,0 +1,57 @@
+{
+    "packages": [
+        {
+            "name": "koolreport/core",
+            "version": "5.6.0",
+            "version_normalized": "5.6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/koolreport/core.git",
+                "reference": "05d539b71a3295ecfa5b8e18ec83d080b05e29f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/koolreport/core/zipball/05d539b71a3295ecfa5b8e18ec83d080b05e29f1",
+                "reference": "05d539b71a3295ecfa5b8e18ec83d080b05e29f1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "time": "2022-04-22T07:02:11+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KoolPHP Inc",
+                    "homepage": "https://www.koolphp.net"
+                }
+            ],
+            "description": "An Open Source PHP Reporting Framework for easier and faster report delivery.",
+            "homepage": "https://www.koolreport.com",
+            "keywords": [
+                "PHP Reporting Framework",
+                "PHP Reporting Tools",
+                "charts and graphs",
+                "data processing",
+                "data visualization"
+            ],
+            "support": {
+                "issues": "https://github.com/koolreport/core/issues",
+                "source": "https://github.com/koolreport/core/tree/v5.6.0"
+            },
+            "install-path": "../koolreport/core"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

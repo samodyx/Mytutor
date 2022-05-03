@@ -100,7 +100,7 @@ session_start();
               </a>
             </li>
             <li>
-              <a href="#">
+              <a href="http://localhost:3000/">
                 <!--update this link to Mytutor link-->
                 <i class="pe-7s-video"></i>
                 <p>Live Lectures</p>

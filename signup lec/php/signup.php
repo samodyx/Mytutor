@@ -9,7 +9,9 @@ $description=$_POST["description"];
 $email=$_POST["email"];
 $contactnumber=$_POST["contactnumber"];
 $password=$_POST["password"];
+$course=$_POST["course_name"];
 
+$lecturerid="";
 
 /*INSERT INTO `mytutor`.`student`
 INSERT INTO `mytutor`.`ecturer`
@@ -32,29 +34,37 @@ VALUES
 <{lecturer_conno: }>);
 
 */
+// $option = array("cost=>4");
+// $hashpassword = password_hash($password,PASSWORD_BCRYPT,$option);
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$sql="INSERT INTO lecturer(lecturer_name,lecturer_username,lecturer_password,lecturer_qualification,lecturer_description,lecturer_email,lecturer_conno,lecturer_course) VALUES ('$fullname','$username','$hashpassword','$qualification','$description','$email','$contactnumber','$course')";
 
-$sql="INSERT INTO lecturer(lecturer_name,lecturer_username,lecturer_password,lecturer_qualification,lecturer_description,lecturer_email,lecturer_conno) VALUES ('$fullname','$username','$password','$qualification','$description','$email','$contactnumber')";
 
+
+$lecid= "SELECT * FROM lecturer ORDER BY lecturer_id DESC LIMIT 1";
+
+$result = $conn->query($lecid);
 
 if(mysqli_query($conn,$sql)){
+
+
     
-    $receiver = $email;
-    $subject = "Thank you for registering with Mytutor";
-    $body = "
-    Dear ".$username."
     
-    Thank you for completing your registration with Mytutor.
-    
-    This email serves as a confirmation that your account is activated and that you are officially a part of the Mytutor.
-    Enjoy!
-    
-    Regards,
-    The Mytutor team";
-    $sender = "info.mytutor2020@gmail.com";
-    if(mail($receiver, $subject, $body, $sender)){
-        echo "Email sent successfully to $receiver";
+
+    while($row = mysqli_fetch_assoc($result)) {
+        $lecturerid = $row["lecturer_id"]; 
     }
-    echo "<script type='text/javascript'>alert('Registration Completed Successfully');location='../../login/login.html';</script>";
+
+    $sqlLecCourses="INSERT INTO lecturercourses(lecturer_id,course_id) VALUES ('$lecturerid','$course')";
+
+    if(mysqli_query($conn,$sqlLecCourses)){
+        echo "<script type='text/javascript'>alert('Registration Completed Successfully and Your account is pending for approval');location='../../login/login.html';</script>";
+    }
+
+
+
+
+
 
 }
 

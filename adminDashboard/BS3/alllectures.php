@@ -212,7 +212,8 @@ if (mysqli_num_rows($result) > 0) {
 <td>Name</td>
 <td>Email </td>
 <td>Contact Number</td>
-<td>Status</td>
+<td>Current Status</td>
+<th colspan="2">Actions</th>
 </tr>
 <?php
 $i=0;
@@ -223,6 +224,9 @@ while($row = mysqli_fetch_array($result)) {
 <td><?php echo $row["lecturer_name"]; ?></td>
 <td><?php echo $row["lecturer_email"]; ?></td>
 <td><?php echo $row["lecturer_conno"]; ?></td>
+<td><?php echo $row["status"]; ?></td>
+<td> <a href="adminapproval.php?id=<?php echo  $row["lecturer_id"]?>" class="btn btn-info" type="submit" name="Approve" value="submit">Approve</a> </td>
+<td> <a href="admindecline.php?id=<?php echo  $row["lecturer_id"]?>" class="btn btn-danger" type="submit" name="save" value="submit">Decline</a> </td>
 </tr>
 <?php
 $i++;

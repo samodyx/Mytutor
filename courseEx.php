@@ -128,7 +128,7 @@ $course_image ="lectureDashboard/BS3/uploads/".$row["course_image"];
 $course_type = $row["course_type"]; 
 $course_price = $row["course_price"]; 
 
-
+}
 ?>
                             <div class="owl-item cloned" style="width: 350px; margin-right: 30px;">
                                 <div class="single_course">
@@ -162,8 +162,7 @@ $course_price = $row["course_price"];
                                     </div>
                                 </div>
                             </div>
-                            <?php
-}?>
+   
 
                         </div>
                     </div>
