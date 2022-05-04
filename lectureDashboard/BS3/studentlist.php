@@ -6,7 +6,7 @@ $pass = "mytutor@123";
 $database = "mytutor";
 
 $conn = mysqli_connect($server, $user, $pass, $database);
-
+session_start();
 if (!$conn) {
     die("<script>alert('Connection Failed.')</script>");
 }
@@ -63,7 +63,6 @@ if (!$conn) {
             <div class="logo">
                 <a href="../index.php" class="simple-text">
                 <label class="simple-text">  <?php
-                session_start();
             echo "Welcome  ".$_SESSION['lecturer_username'];
             ?>  </label>
                 </a>
@@ -71,7 +70,7 @@ if (!$conn) {
 
             <ul class="nav">
             <li class="active">
-              <a href="table.php">
+              <a href="studentlist.php">
                 <i class="pe-7s-users"></i>
                 <p>Students</p>
               </a>
@@ -84,7 +83,7 @@ if (!$conn) {
             </li>
             <li>
             <li>
-              <a href="#">
+              <a href="http://localhost:3000/">
                 <!--update this link to Mytutor link-->
                 <i class="pe-7s-video"></i>
                 <p>Live Lectures</p>

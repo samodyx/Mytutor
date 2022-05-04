@@ -68,65 +68,66 @@ session_start();
                                             <span>or</span>
                                         </p>
                                     </div> 
-                                    <form action="php/signup.php" method="post" class="signup-form">
+                                    <form action="./php/signup.php" method="POST" class="signup-form" name="signValidation" id="signupForm">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="label" for="name">Full Name</label>
                                                     <input type="text" class="form-control" name="fullname" required>
+                                                    <span class="error"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="label" for="name">Username</label>
-                                                    <input type="text" class="form-control" name="username" required>
+                                                    <input type="text" class="form-control" name="username">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="label" for="name">Course</label>
-                                                    <select name="course_name">
-                              <?php
-                             while($row = mysqli_fetch_assoc($result)) {
-                             echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
-                              }
-                              ?>
-                          </select>
+                                                         <select name="course_name">
+                                                        <?php
+                                                        while($row = mysqli_fetch_assoc($result)) {
+                                                        echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
+                                                        }
+                                                        ?>
+                                                            </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="label" for="qualification">Qualification</label>
-                                                <textarea type="text" class="form-control" name="qualification" required></textarea>
+                                                <textarea type="text" class="form-control" name="qualification"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="label" for="description">Description</label>
-                                                <textarea type="text" class="form-control" name="description" required></textarea>
+                                                <textarea type="text" class="form-control" name="description"></textarea>
                                             </div>
                                         </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="label" for="email">Email Address</label>
-                                                    <input type="text" class="form-control" name="email" required>
+                                                    <input type="text" class="form-control" name="email">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="label" for="conno">Contact Number</label>
-                                                    <input type="tel" class="form-control" name="contactnumber" required>
+                                                    <input type="tel" class="form-control" name="contactnumber">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="label" for="password">Password</label>
-                                                    <input type="password" class="form-control" name="password" required>
+                                                    <input type="password" class="form-control" name="password">
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="label" for="password">Confirm Password</label>
-                                                    <input type="password" class="form-control" name="retypepassword"required>
+                                                    <input type="password" class="form-control" name="retypepassword">
                                              <div class="col-md-12 my-4">
                                                 <div class="form-group">
                                                     <div class="w-100">
@@ -156,11 +157,30 @@ session_start();
             </div>
         </div>
     </section>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>   
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script type="text/javascript">
+        var $formvalidate = $('#signupForm');
+        $(document).ready(function(){
+            if($formvalidate.lenght){
+                $formvalidate.validate({
+                    rules:{
+                        required:true,
+                    },
+                    messages:{
+                        required:'This field is required'
+                    }
+                })
+            }
+        })
+    </script>
 
 </body>
 

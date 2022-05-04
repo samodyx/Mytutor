@@ -271,7 +271,7 @@ $conn->close();
                       >
                         Update Profile
                       </button>
-                      <div class="clearfix"></div>
+                      <!-- <div class="clearfix"></div> -->
                     </form>
                     <a href="deletelecturer.php" class="btn btn-warning">Delete</a>
                   </div>

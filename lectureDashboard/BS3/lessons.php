@@ -80,7 +80,7 @@ session_start();
 
           <ul class="nav">
             <li>
-              <a href="table.php">
+              <a href="studentlist.php">
                 <i class="pe-7s-users"></i>
                 <p>Students</p>
               </a>
@@ -179,72 +179,63 @@ session_start();
                   </div>
                 </div>
               </div>
+            </form>
             </div>
+            
           </div>
           <!-- All lessons -->
-          <!-- <div class="content">
+          <div class="content">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-12">
                   <div class="card">
                     <div class="header">
                       <h4 class="title">All Lessons</h4>
-
-                   
-                    <select class="box" aria-label="Default select example">
-                      <option selected>-Select the lesson-</option>
-                      <?php
-                             while($row = mysqli_fetch_assoc($result2)) {
-                             echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
-                              }
-                              ?>
-                                          </select>
-                                         </ul>
+                    </ul>
                     </div>
                     <div class="content table-responsive table-full-width">
                     <?php
-$result = mysqli_query($conn,"SELECT lesson_id,course_name,lesson_link,lesson_materials FROM lesson");
-?>
-<?php
-if (mysqli_num_rows($result) > 0) {
-?>
-<table class='table table-bordered table-striped'>
-<th>Lesson ID</th>
-                          <th>Lesson Name</th>
-                          <th>Course Name</th>
-                          <th colspan="2">Actions</th>
-<?php
-$i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-<tr>
-<td><?php echo $row["lesson_id"]; ?></td>
-<td><?php echo $row["course_name"]; ?></td>
-<td><?php echo $row["lesson_link"]; ?></td>
-<td><?php echo $row["lesson_materials"]; ?></td>
-<td>
-                              <button class="btn btn-warning">Delete</button>
-                              <button class="btn btn-info">Update</button>
-                            </td>
-</tr>
+                            $result = mysqli_query($conn,"SELECT * FROM lesson");
+                            ?>
+                            <?php
+                            if (mysqli_num_rows($result)) {
+                            ?>
+                              <table class='table table-bordered table-striped'>
+                              <th>Lesson ID</th>
+                            <th>Lesson Name</th>
+                            <th>Lesson Materials</th>
 
-<?php
-$i++;
-}
-?>
-</table>
-<?php
-}
-else{
-echo "No lesson found";
-}
-?>
-                                          </div>
+                            <th colspan="1">Actions</th>
+                      <?php
+                      $i=0;
+                      while($row = mysqli_fetch_array($result)) {
+                      ?>
+                                <tr>
+                                <td><?php echo $row["lesson_id"]; ?></td>
+                                <td><?php echo $row["lesson_name"]; ?></td>
+                                <td><?php echo $row["lesson_materials"]; ?></td>
+                                <td>
+                                <a href="deletelesson.php?id=<?php echo $row['lesson_id']?>" class="btn btn-warning">Delete</a>
+                            </td>
+                                  </tr>
+
+                                            <?php
+                                            $i++;
+                                            }
+                                            ?>
+                                </table>
+                                    <?php
+                                    }
+                                    else{
+                                    echo "No lesson found";
+                                    }
+                                    ?>
+                           </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
         
 
         <footer class="footer">

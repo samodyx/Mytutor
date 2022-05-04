@@ -112,7 +112,7 @@ else{
         
         $_SESSION['adminid']=$userid;
         $_SESSION['admin_username']=$username;
-        header("location:../../adminDashboard/BS3/allstudents.php");
+        header("location:../../adminDashboard/BS3/allstudent.php");
     }
     
     else{

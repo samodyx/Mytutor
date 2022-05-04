@@ -16,6 +16,7 @@ if(isset($_POST['save']))
 	 $sql = "UPDATE lecturer SET lecturer_name='$lecturer_name',lecturer_username='$lecturer_username',lecturer_password='$lecturer_password',lecturer_qualification='$lecturer_qualification',lecturer_description='$lecturer_description',lecturer_email='$lecturer_email',lecturer_conno='$lecturer_conno' where lecturer_id='$lecturer_id'";
 	 if (mysqli_query($conn, $sql)) {
 		echo("New record created successfully !") ;
+        header("location:studentlist.php");
 	 } else {
 		echo "Error: " . $sql . "
 " . mysqli_error($conn);

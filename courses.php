@@ -223,7 +223,7 @@ $course_price = $row["course_price"];
         </div>
     </div>
     <!-- Courses End -->
-    <a href="coursedetails.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft " style="border-radius: 1px;">Read More</a>
+    <a href="courseEX.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft " style="border-radius: 1px;">Read More</a>
  
    
     <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a> -->

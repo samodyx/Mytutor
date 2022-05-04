@@ -62,6 +62,11 @@ nav,
 section {
     display: block;
 }
+.error{
+    color: red;
+    outline:none ;
+    border-color: red;
+}
 
 body {
     margin: 0;

@@ -26,8 +26,8 @@ if(isset($_POST['save']))
  
 	 if(move_uploaded_file($file_loc,$folder.$final_file))
 	 {
-	 $sql = "INSERT INTO lesson(course_id,lesson_name,lesson_materials)
-	 VALUES ('$course_id','$lesson_name','$final_file')";
+	 $sql = "INSERT INTO lesson(course_id,lesson_name,lesson_materials,course_name)
+	 VALUES ('$course_id','$lesson_name','$final_file',$course_id)";
 	 if (mysqli_query($conn, $sql)) {
 		// die("New record created successfully !") ;
 	 } else {
@@ -38,7 +38,7 @@ if(isset($_POST['save']))
 		 ?>
 		 <script>
 		 alert('successfully uploaded');
-		 // window.location.href='index.php?success';
+		header("location: lessons.php");
 		 </script>
 		 <?php
 	 }

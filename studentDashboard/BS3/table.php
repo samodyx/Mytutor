@@ -48,14 +48,14 @@
 
 
         <ul class="nav">
-            <li class="active">
-                <a href="#">
+            <!-- <li class="active">
+                <a href="table.php">
                     <i class="pe-7s-graph"></i>
                     <p>Course Progress</p>
                 </a>
-            </li>
+            </li> -->
             <li>
-                <a href="#">
+                <a href="user.php">
                     <i class="pe-7s-user"></i>
                     <p>User Profile</p>
                 </a>

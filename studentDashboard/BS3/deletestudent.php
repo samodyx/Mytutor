@@ -9,5 +9,6 @@ $sql="DELETE FROM lecturer WHERE student_id=$student_id";
 mysqli_query($conn, $sql);
 
 
-echo "Done"
+echo "Done";
+header("location:../index.php");
 ?>

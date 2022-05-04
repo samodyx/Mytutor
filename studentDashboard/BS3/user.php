@@ -16,10 +16,6 @@ $uid=$_SESSION['student_id'];
 $sql = "SELECT * FROM student WHERE student_id=$uid";
 $result = $conn->query($sql);
 
-
-
-
-
   while($row = $result->fetch_assoc()) {
     $student_name = $row["student_name"]; 
 $student_username = $row["student_username"]; 
