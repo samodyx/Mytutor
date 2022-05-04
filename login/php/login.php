@@ -38,7 +38,7 @@ if($count>=1){
         
         $_SESSION['student_id']=$userid;
     $_SESSION['student_username']=$username;
-    header("location:../../studentDashboard/BS3/dashboard.php");
+    header("location:../../studentDashboard/BS3/table.php");
     
 }
 else{
@@ -56,26 +56,34 @@ else{
     $countlec=mysqli_num_rows($resultlec);
 
     if($countlec>=1){
-        if(password_verify($password, $hashed_password)) {
-            // If the password inputs matched the hashed password in the database
-            // Do something, you know... log them in.
-        } 
-
-        $sqlQ="Select * From lecturer where lecturer_username='$username' AND lecturer_password='$password'";
+             $sqlQ="Select * From lecturer where lecturer_username='$username' AND lecturer_password='$password'";
 
         $res=$conn->query($sqlQ);
 
         $userid="";
+        $status="";
 
         while($row=$res->fetch_assoc()){
+            $status=$row['status'];
             $userid= $row['lecturer_id'];
+    
+        }if($status=="Pending"){
+            header("location:../loginnotapproved.html");
+        
+        }elseif($status=="Decline"){
+
+            header("location:../logindecline.html");
+        }
+        
+        else{
+            header("location:../../lectureDashboard/BS3/studentlist.php");
         }
 
         
         
         $_SESSION['lecturerid']=$userid;
         $_SESSION['lecturer_username']=$username;
-        header("location:../../lectureDashboard/BS3/dashboard.php");
+        // header("location:../../lectureDashboard/BS3/studentlist.php");
         
     }
     
@@ -104,7 +112,7 @@ else{
         
         $_SESSION['adminid']=$userid;
         $_SESSION['admin_username']=$username;
-        header("location:../../adminDashboard/BS3/dashboard.php");
+        header("location:../../adminDashboard/BS3/allstudents.php");
     }
     
     else{

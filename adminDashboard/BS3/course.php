@@ -30,7 +30,7 @@ session_start();
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title>Lecture Dashboard</title>
+    <title>Admin Dashboard</title>
 
     <meta
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
@@ -65,54 +65,60 @@ session_start();
   </head>
   <body>
     <div class="wrapper">
-    <div
+      <div
         class="sidebar"
         data-color="blue"
         data-image="assets/img/lecturedashboard.jpg"
       >
-        <div class="sidebar-wrapper">
+      <div class="sidebar-wrapper">
           <div class="logo">
             <label class="simple-text">  <?php
               
-              echo "Welcome  ".$_SESSION['lecturer_username'];
-              ?>  </label>
+                echo "Welcome  ".$_SESSION['admin_username'];
+                ?>  </label>
           </div>
 
           <ul class="nav">
-            <li>
-              <a href="table.php">
+            <li class="#">
+              <a href="allstudent.php">
                 <i class="pe-7s-users"></i>
                 <p>Students</p>
               </a>
+            
+
+            <li class="#">
+              <a href="alllectures.php">
+                <i class="pe-7s-users"></i>
+                <p>Lecturers</p>
+              </a>
             </li>
-           
-              <a href="lessons.php">
-                <li class="active">
-                  <i class="pe-7s-notebook"></i>
-                  <p>Lessons</p>
-               </a
-              >
+            <li class="active">
+              <a href="course.php">
+                <i class="pe-7s-notebook"></i>
+                <p>Courses</p>
+              </a>
             </li>
             <li>
-            <li>
-              <a href="http://localhost:3000/">
-                <!--update this link to Mytutor link-->
-                <i class="pe-7s-video"></i>
-                <p>Live Lectures</p>
+              <a href="#">
+                <i class="pe-7s-note"></i>
+                <p>Lessons</p>
               </a>
             </li>
 
-            <li>
-              <a href="user.php">
-                <i class="pe-7s-user"></i>
-                <p>User Profile</p>
+            <li >
+              <a href="#">
+                <!--update this link to Mytutor link-->
+                <i class="pe-7s-graph2"></i>
+                <p>Charts</p>
               </a>
             </li>
           </ul>
         </div>
       </div>
+      
       <div class="main-panel">
-    <nav class="navbar navbar-default navbar-fixed">
+        
+        <nav class="navbar navbar-default navbar-fixed">
           <div class="container-fluid">
             <div class="navbar-header">
         
@@ -131,121 +137,101 @@ session_start();
           </div>
         </nav>
 <!-- ADD COURSES -->
-          
-<!-- ADD LESSON -->
+        <div class="content">
           <div class="container-fluid">
             <div class="row">
-            <form method="post" action="addlesson.php" enctype="multipart/form-data">
+              <form method="post" action="addcourse.php" enctype="multipart/form-data">
               <div class="col-md-12">
                 <div class="card">
                   <div class="header">
-                    <h4 class="title">Add Lessons</h4>
-
+                    <h4 class="title">Add Course</h4>
                   </div>
                   <div class="content table-responsive table-full-width">
                     <table class="table table-hover table-striped">
                       <thead>
-                        <!-- <th>Lesson ID</th> -->
-                        <th>Lesson Name</th>
+                        <!-- <th>Course ID</th> -->
                         <th>Course Name</th>
-                        <th>Lesson Link</th>
-                        <th>Course Material</th>
+                        <th>Course Description</th>
+                        <th>Course Banner</th>
+                        <th>Course Type</th>
+                        <th>Course Price</th>
                         <th colspan="1">Actions</th>
                       </thead>
                       <tbody>
                         <tr>
-                          <td><input type="text" name="lesson_name" ></td>
-                          <td>
-                          <select name="course_name">
-                              <?php
-                             while($row = mysqli_fetch_assoc($result)) {
-                             echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
-                              }
-                              ?>
-                          </select>
-                          </td>
-                          <td><input type="text" name="lesson_link"></td>
-                          <td><div class="form-group">
-                            <input type="file" class="form-control-file" name="filePDF" id="exampleFormControlFile1">
+                          <td><input type="text" name="course_name" ></td>
+                          <td><input type="text" name="course_description" ></td>
+                          <td><div class="form-group" >
+
+                            <input type="file" class="form-control-file" name="course_image">
                             </div>
                           </td>
-                           <td>
-                           <button class="btn btn-info"<input type="submit" name="save" value="submit">Add Lessons</button>
-                           
+                                                   
+                          <td><input type="text" name="course_type"></td>
+                          <td><input type="text" name="course_price"></td>
+                          <td>
+                           <button class="btn btn-info"<input type="submit" name="save" value="submit">Add Course</button>
                           </td>
                         </tr>
                       </tbody>
                     </table>
+                  
                   </div>
                 </div>
+              
               </div>
+            </form>
             </div>
           </div>
-          <!-- All lessons -->
-          <!-- <div class="content">
+<!-- Update Courses -->
+          <div class="content">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-12">
                   <div class="card">
                     <div class="header">
-                      <h4 class="title">All Lessons</h4>
-
-                   
-                    <select class="box" aria-label="Default select example">
-                      <option selected>-Select the lesson-</option>
-                      <?php
-                             while($row = mysqli_fetch_assoc($result2)) {
-                             echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
-                              }
-                              ?>
-                                          </select>
-                                         </ul>
-                    </div>
+                      <h4 class="title">All Courses</h4>
+                   </div>
                     <div class="content table-responsive table-full-width">
                     <?php
-$result = mysqli_query($conn,"SELECT lesson_id,course_name,lesson_link,lesson_materials FROM lesson");
-?>
-<?php
-if (mysqli_num_rows($result) > 0) {
-?>
+
+                  $res = "SELECT * FROM course";
+                  $result = $conn->query($res);
+
+                  ?>
+
 <table class='table table-bordered table-striped'>
-<th>Lesson ID</th>
-                          <th>Lesson Name</th>
-                          <th>Course Name</th>
-                          <th colspan="2">Actions</th>
-<?php
-$i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-<tr>
-<td><?php echo $row["lesson_id"]; ?></td>
-<td><?php echo $row["course_name"]; ?></td>
-<td><?php echo $row["lesson_link"]; ?></td>
-<td><?php echo $row["lesson_materials"]; ?></td>
-<td>
-                              <button class="btn btn-warning">Delete</button>
+<th>Course ID</th>
+  <th>Course Name</th>
+      <th>Course Type</th>
+          <th colspan="2">Actions</th>
+              <?php
+              $i=0;
+              while($row = mysqli_fetch_array($result)) {
+              ?>
+              <tr>
+      <td><?php echo $row["course_id"]; ?></td>
+      <td><?php echo $row["course_name"]; ?></td>
+      <td><?php echo $row["course_type"]; ?></td>
+      <td>
+      <a href="deletecourse.php">                      
+      <button class="btn btn-warning">Delete</button>
+      </a>  
                               <button class="btn btn-info">Update</button>
                             </td>
-</tr>
+                          </tr>
+                          <?php
+                          }
+                          ?>
+                          </table>
 
-<?php
-$i++;
-}
-?>
-</table>
-<?php
-}
-else{
-echo "No lesson found";
-}
-?>
-                                          </div>
+                      </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div> -->
-        
+          </div>
+        </div>
 
         <footer class="footer">
           <div class="container-fluid">

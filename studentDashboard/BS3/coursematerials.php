@@ -1,20 +1,3 @@
-<?php 
-
-$server = "localhost:3308";
-$user = "root";
-$pass = "mytutor@123";
-$database = "mytutor";
-
-$conn = mysqli_connect($server, $user, $pass, $database);
-
-if (!$conn) {
-    die("<script>alert('Connection Failed.')</script>");
-}
-session_start();
-?>
-
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,7 +5,7 @@ session_start();
 	<link rel="icon" type="image/png" href="assets/img/update_logo_700x_NUf_icon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Admin Dashboard</title>
+	<title>Student Dashboard</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -49,62 +32,56 @@ session_start();
 </head>
 <body>
 
-<div class="wrapper">
-      <div
-        class="sidebar"
-        data-color="azure"
-        data-image="assets/img/adminDashboard.png"
-      >
+    <div class="wrapper">
+        <div class="sidebar" data-color="blue" data-image="assets/img/studentdashboard.jpg">
+
     <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
 
 
-    	
     <div class="sidebar-wrapper">
-          <div class="logo">
-            <label class="simple-text">  <?php
-              
-                echo "Welcome  ".$_SESSION['admin_username'];
-                ?>  </label>
+    <div class="logo">
+          <label class="simple-text">  <?php
+          session_start();
+            echo "Welcome  ".$_SESSION['student_username'];
+            ?>  </label>
           </div>
 
-          <ul class="nav">
-            <li class="#">
-              <a href="allstudent.php">
-                <i class="pe-7s-users"></i>
-                <p>Students</p>
-              </a>
-            
 
+        <ul class="nav">
+            <li >
+                <a href="table.php">
+                    <i class="pe-7s-graph"></i>
+                    <p>Course Progress</p>
+                </a>
+            </li>
+            <li>
+                <a href="user.php">
+                    <i class="pe-7s-user"></i>
+                    <p>User Profile</p>
+                </a>
+            </li>
+            <li>
+                <a href="table.html">
+                    <i class="pe-7s-note2"></i>
+                    <p>Course List</p>
+                </a>
+            </li>
             <li class="active">
-              <a href="alllectures.php">
-                <i class="pe-7s-users"></i>
-                <p>Lecturers</p>
-              </a>
+                <a href="coursematerials.php">
+                    <i class="pe-7s-folder"></i>
+                    <p>Course Materials</p>
+                </a>
             </li>
             <li>
-              <a href="course.php">
-                <i class="pe-7s-notebook"></i>
-                <p>Courses</p>
-              </a>
+                <a href="livelectures.php">  <!--update this link to Mytutor link--> 
+                    <i class="pe-7s-global"></i>
+                    <p>Live</p>
+                </a>
             </li>
-            <li>
-              <a href="#">
-                <i class="pe-7s-note"></i>
-                <p>Lessons</p>
-              </a>
-            </li>
-
-            <li>
-              <a href="#">
-                <i class="pe-7s-graph2"></i>
-                <p>Charts</p>
-              </a>
-            </li>
-          </ul>
-        </div>
+        </ul>
     </div>
-
-    <div class="main-panel">
+</div>
+<div class="main-panel">
     <nav class="navbar navbar-default navbar-fixed">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -123,48 +100,53 @@ session_start();
             </div>
           </div>
         </nav>
-        <script type="text/javascript">
-$(document).ready(function(){
-$('[data-toggle="tooltip"]').tooltip();   
-});
-</script>
-</head>
-<body>
-<div class="bs-example">
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<div class="page-header clearfix">
-<h2 class="pull-left">Lecturer List</h2>
-</div>
-<?php
-$result = mysqli_query($conn,"SELECT * FROM lecturer");
+
+        <div class="content">
+        <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="header">
+                      <h4 class="title">All Lessons</h4>
+
+                   
+                    <select class="box" aria-label="Default select example">
+                      <option selected>-Select the lesson-</option>
+                      <?php
+                             while($row = mysqli_fetch_assoc($result2)) {
+                             echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
+                              }
+                              ?>
+                                          </select>
+                                         </ul>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                    <?php
+$result = mysqli_query($conn,"SELECT lesson_id,course_name,lesson_link,lesson_materials FROM lesson");
 ?>
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
 <table class='table table-bordered table-striped'>
-<tr>
-<td>ID</td>
-<td>Name</td>
-<td>Email </td>
-<td>Contact Number</td>
-<td>Current Status</td>
-<th colspan="2">Actions</th>
-</tr>
+<th>Lesson ID</th>
+                          <th>Lesson Name</th>
+                          <th>Course Name</th>
+                          <th colspan="2">Actions</th>
 <?php
 $i=0;
 while($row = mysqli_fetch_array($result)) {
 ?>
 <tr>
-<td><?php echo $row["lecturer_id"]; ?></td>
-<td><?php echo $row["lecturer_name"]; ?></td>
-<td><?php echo $row["lecturer_email"]; ?></td>
-<td><?php echo $row["lecturer_conno"]; ?></td>
-<td><?php echo $row["status"]; ?></td>
-<td> <a href="adminapproval.php?id=<?php echo  $row["lecturer_id"]?>" class="btn btn-info" type="submit" name="Approve" value="submit">Approve</a> </td>
-<td> <a href="admindecline.php?id=<?php echo  $row["lecturer_id"]?>" class="btn btn-danger" type="submit" name="Decline" value="submit">Decline</a> </td>
+<td><?php echo $row["lesson_id"]; ?></td>
+<td><?php echo $row["course_name"]; ?></td>
+<td><?php echo $row["lesson_link"]; ?></td>
+<td><?php echo $row["lesson_materials"]; ?></td>
+<td>
+                              <button class="btn btn-warning">Delete</button>
+                              <button class="btn btn-info">Update</button>
+                            </td>
 </tr>
+
 <?php
 $i++;
 }
@@ -173,9 +155,15 @@ $i++;
 <?php
 }
 else{
-echo "No result found";
+echo "No lesson found";
 }
 ?>
+                                          </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
 
         <footer class="footer">
             <div class="container-fluid">

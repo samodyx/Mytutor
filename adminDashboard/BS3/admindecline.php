@@ -25,7 +25,7 @@ $sql = "UPDATE lecturer SET `status`='Decline' WHERE lecturer_id=$id";
 
 if ($conn->query($sql) === TRUE) {
   
-    echo "Lecture has been approved successfully";
+    echo "Lecture has been declined successfully";
 
 } else {
   echo "Error updating record: " . $conn->error;

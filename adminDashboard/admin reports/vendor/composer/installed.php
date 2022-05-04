@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'b9bc1f4f6bda3c9245e7e2a44f8be6f53847e4ec',
+        'reference' => '784858376fe42e1e49fab1b0ca04800e8c5a8fe1',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'b9bc1f4f6bda3c9245e7e2a44f8be6f53847e4ec',
+            'reference' => '784858376fe42e1e49fab1b0ca04800e8c5a8fe1',
             'dev_requirement' => false,
         ),
         'koolreport/core' => array(

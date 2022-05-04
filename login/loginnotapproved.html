@@ -33,32 +33,25 @@
                         <div class="login-wrap p-4 p-md-5">
                             <div class="d-flex">
                                 <div class="w-100">
-                                    <h3 class="mb-4">Login</h3>
-                                </div>
-                                <div class="w-100">
-                                    <p class="social-media d-flex justify-content-end">
-                                        <a href="https://www.facebook.com/login" class="social-icon google d-flex align-items-center justify-content-center"><span class="fa fa-google"></span></a>
-                                        <a href="https://www.facebook.com/login" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
-                                        <a href="https://twitter.com/login" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
-                                    </p>
+                                    <h3 class="mb-4"> Your account hasn't approved yet..!</h3>
                                 </div>
                             </div>
-                            <form action="php/login.php" method="post" class="login">
+                            <form action="index.php" method="post" class="login">
                                 <div class="form-group mb-3">
                                     <label class="label" for="name">Username</label>
-                                    <input type="text" class="form-control" placeholder="Username" name="username" required>
+                                    <input type="text" class="form-control" placeholder="Username" name="username" disabled>
                                 </div>
                                 <div class="form-group mb-3">
                                     <label class="label" for="password">Password</label>
-                                    <input type="password" class="form-control" placeholder="Password" name="password" required>
+                                    <input type="password" class="form-control" placeholder="Password" name="password" disabled>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Login In</button>
+                                    <button type="submit" class="form-control btn btn-primary rounded submit px-3">Go back to Home page</button>
                                 </div>
-                                <div class="form-group d-md-flex">
+                                <!-- <div class="form-group d-md-flex">
                                     <div class="w-50 text-left">
-                                        <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
-									  <input type="checkbox" checked>
+                                        <label class="checkbox-wrap checkbox-primary mb-0" disabled>Remember Me
+									  <input type="checkbox" checked disabled>
 									  <span class="checkmark"></span>
 										</label>
                                     </div>
@@ -66,8 +59,8 @@
                                         <a href="../passwordreset.html">Forgot Password</a>
                                     </div>
                                 </div>
-                            </form>
-                            <p class="text-center">Not a member? Sign Up as <a href="../signup lec/signup.php"> Lecture </a> or  <a href="../signup stu/signup.html"> Student </a> </p>
+                            </form> -->
+                            <!-- <p class="text-center">Not a member? Sign Up as <a href="../signup lec/signup.php"> Lecture </a> or  <a href="../signup stu/signup.html"> Student </a> </p> -->
                         </div>
                     </div>
                 </div>

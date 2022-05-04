@@ -63,7 +63,7 @@ $result = $conn->query($sql);
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <a href="index.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-primary"><img src="img\logo\update-logo-700x.png" width="80" height="80" class="d-inline-block align-center" alt="">My Tutor.lk</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -71,14 +71,14 @@ $result = $conn->query($sql);
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="index.php" class="nav-item nav-link">Home</a>
+                <a href="about.php" class="nav-item nav-link">About</a>
                 <a href="courses.html" class="nav-item nav-link active">Courses</a>
                
              
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.php" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Log In<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="login/login.html" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Log In<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -92,7 +92,7 @@ $result = $conn->query($sql);
                     <h1 class="display-3 text-white animated slideInDown">Courses</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
                             <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
                             <li class="breadcrumb-item text-white active" aria-current="page">Courses</li>
                         </ol>
@@ -196,21 +196,21 @@ $course_price = $row["course_price"];
                         </div>
                         <div class="text-center p-4 pb-0">
                             <h3 class="mb-0"><?php echo "LKR ".$course_price ?></h3>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
                                 <small>(123)</small>
-                            </div>
+                            </div> -->
                             <h5 class="mb-4"><?php echo $course_name ?></h5>
                         </div>
-                        <div class="d-flex border-top">
+                        <!-- <div class="d-flex border-top">
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>Viraj Kavinda</small>
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>3 months</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -223,7 +223,7 @@ $course_price = $row["course_price"];
         </div>
     </div>
     <!-- Courses End -->
-    <a href="courseEx.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft " style="border-radius: 1px;">Read More</a>
+    <a href="coursedetails.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft " style="border-radius: 1px;">Read More</a>
  
    
     <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a> -->
