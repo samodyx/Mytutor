@@ -36,7 +36,8 @@ session_start();
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    
+    <script src="jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <link rel="stylesheet" href="css/Signup.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
@@ -71,18 +72,18 @@ session_start();
                                             <span>or</span>
                                         </p>
                                     </div> 
-                                    <form action="#" method="POST" class="signup-form" name="signValidation" id="signupForm">
+                                    <form action="php/signup.php" method="POST" class="signup-form" name="signValidation" id="signupForm">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="label" for="fullname">Full Name <span>(Full name is Required)</span></label>
+                                                    <label class="label" for="fullname">Full Name </label>
                                                     <input type="text" class="form-control" name="fullname" id="fullname">
                                                     <span class="error"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="label" for="username">Username <span>(Username is Required)</span></label>
+                                                    <label class="label" for="username">Username </label>
                                                     <input type="text" class="form-control" name="username" id="username">
                                                 </div>
                                             </div>
@@ -142,8 +143,8 @@ session_start();
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <div class="form-group">
-                                                <input class="submit" type="submit" value="Create an account as Lecture">
+                                            <div class="form-group">
+                                                    <button type="submit" class="btn btn-primary submit p-3">Create an account as Lecturer</button>
                                                 </div>
                                             </div>
                                         </div>

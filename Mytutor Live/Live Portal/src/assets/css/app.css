@@ -28,12 +28,12 @@
     margin-bottom: 20px;
     overflow-x: hidden;
     overflow-y: auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
 }
 
 #chat-messages::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
+    width: 0px; 
     background: transparent;
 }
 
@@ -104,12 +104,7 @@
 }
 
 
-/* .mirror-mode{
-    -ms-transform: scaleX(-1);
-    -moz-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-} */
+
 
 
 .sender-info{
@@ -124,6 +119,10 @@
     font-size: 12px;
     color: black;
     background-color: wheat;
+}
+
+.text-white{
+   color: rgb(255, 255, 255) !important;
 }
 
 
@@ -234,6 +233,27 @@
         z-index: 1000;
     }
 }
+
+.roomCreated{
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    margin-top: -220px !important;
+    margin-bottom: auto !important;
+    display: block;
+    animation: fadeInAnimation ease 1s !important;
+    animation-iteration-count: 1 !important;
+    animation-fill-mode: linear !important;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0 !important;
+    }
+    100% {
+        opacity: 1 !important;
+     }
+}
+
 .roomCreated div{
     box-sizing: border-box;
     box-shadow: 0px 0px 5px 2px rgba(185, 185, 185, 0.5);

@@ -6,7 +6,7 @@ let stream = require( './ws/stream' );
 let path = require( 'path' );
 let favicon = require( 'serve-favicon' );
 
-// app.use( favicon( path.join( __dirname, 'update_logo_700x_NUf_icon.ico' ) ) );
+
 app.use( '/assets', express.static( path.join( __dirname, 'assets' ) ) );
 
 app.get( '/', ( req, res ) => {

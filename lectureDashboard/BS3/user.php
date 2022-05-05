@@ -202,6 +202,7 @@ $conn->close();
                               class="form-control"
                               placeholder="New Password"
                               name="Password"
+                              required
                             />
                           </div>
                         </div>
@@ -212,7 +213,7 @@ $conn->close();
                               type="password"
                               class="form-control"
                               placeholder="Confrim New Password"
-                             
+                             required
                             />
                           </div>
                         </div>

@@ -1,18 +1,4 @@
-/*!
 
- =========================================================
- * Light Bootstrap Dashboard - v1.4.0
- =========================================================
-
- * Product Page: ../index.php/product/light-bootstrap-dashboard
- * Copyright 2017 Mytutor (../index.php)
- * Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE.md)
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
 
 var searchVisible = 0;
 var transparent = true;
@@ -25,13 +11,13 @@ var navbar_initialized = false;
 $(document).ready(function(){
     window_width = $(window).width();
 
-    // check if there is an image set for the sidebar's background
+    
     lbd.checkSidebarImage();
 
-    // Init navigation toggle for small screens
+    
     lbd.initRightMenu();
 
-    //  Activate the tooltips
+    
     $('[rel="tooltip"]').tooltip();
 
     $('.form-control').on("focus", function(){
@@ -40,7 +26,7 @@ $(document).ready(function(){
         $(this).parent(".input-group").removeClass("input-group-focus");
     });
 
-    // Fixes sub-nav not working as expected on IOS
+    
 $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) { e.stopPropagation(); });
 });
 
@@ -106,15 +92,15 @@ lbd = {
 
             nav_content = '<ul class="nav nav-mobile-menu">' + nav_content + '</ul>';
 
-            // navbar_form = $('nav').find('.navbar-form').get(0).outerHTML;
+            
 
             $sidebar_nav = $sidebar_wrapper.find(' > .nav');
 
-            // insert the navbar form before the sidebar list
+            
             $nav_content = $(nav_content);
-            // $navbar_form = $(navbar_form);
+            
             $nav_content.insertBefore($sidebar_nav);
-            // $navbar_form.insertBefore($nav_content);
+            
 
             $(".sidebar-wrapper .dropdown .dropdown-menu > li > a").click(function(event) {
                 event.stopPropagation();
@@ -124,8 +110,8 @@ lbd = {
             mobile_menu_initialized = true;
         } else {
             if($(window).width() > 991){
-                // reset all the additions that we made for the sidebar wrapper only if the screen is bigger than 991px
-                // $sidebar_wrapper.find('.navbar-form').remove();
+                
+                
                 $sidebar_wrapper.find('.nav-mobile-menu').remove();
 
                 mobile_menu_initialized = false;
@@ -135,10 +121,10 @@ lbd = {
 }
 
 
-// Returns a function, that, as long as it continues to be invoked, will not
-// be triggered. The function will be called after it stops being called for
-// N milliseconds. If `immediate` is passed, trigger the function on the
-// leading edge, instead of the trailing.
+
+
+
+
 
 function debounce(func, wait, immediate) {
 	var timeout;

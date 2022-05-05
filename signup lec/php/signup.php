@@ -36,8 +36,8 @@ VALUES
 */
 // $option = array("cost=>4");
 // $hashpassword = password_hash($password,PASSWORD_BCRYPT,$option);
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
-$sql="INSERT INTO lecturer(lecturer_name,lecturer_username,lecturer_password,lecturer_qualification,lecturer_description,lecturer_email,lecturer_conno,lecturer_course) VALUES ('$fullname','$username','$hashpassword','$qualification','$description','$email','$contactnumber','$course')";
+// $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$sql="INSERT INTO lecturer(lecturer_name,lecturer_username,lecturer_password,lecturer_qualification,lecturer_description,lecturer_email,lecturer_conno,lecturer_course) VALUES ('$fullname','$username','$password','$qualification','$description','$email','$contactnumber','$course')";
 
 
 

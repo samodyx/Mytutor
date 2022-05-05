@@ -1,19 +1,5 @@
-/*!
 
- =========================================================
- * Light Bootstrap Dashboard - v1.4.0
- =========================================================
 
- * Product Page: ../index.php/product/light-bootstrap-dashboard
- * Copyright 2017 Mytutor (../index.php)
- * Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE.md)
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
-/*      light colors         */
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -50,7 +36,7 @@
     }
 }
 
-/*           Font Smoothing      */
+
 body,
 h1, .h1,
 h2, .h2,
@@ -151,7 +137,7 @@ h1 .subtitle {
     color: #FF4A55 !important;
 }
 
-/*     General overwrite     */
+
 body,
 .wrapper {
     min-height: 100vh;
@@ -188,7 +174,7 @@ input:focus {
     outline: 0 !important;
 }
 
-/*           Animations              */
+
 .form-control,
 .input-group-addon,
 .tagsinput,
@@ -1282,7 +1268,7 @@ fieldset[disabled] .btn-neutral.active {
     filter: alpha(opacity=100);
 }
 
-/*      Checkbox and radio         */
+
 .checkbox,
 .radio {
     margin-bottom: 12px;
@@ -1456,8 +1442,8 @@ fieldset[disabled] .btn-neutral.active {
   * bootstrap-switch - Turn checkboxes and radio buttons into toggle switches.
   *
   * @version v3.3.4
-  * @homepage https://bttstrp.github.io/bootstrap-switch
-  * @author Mattia Larentis <mattia@larentis.eu> (http://larentis.eu)
+  * @homepage https:
+  * @author Mattia Larentis <mattia@larentis.eu> (http:
   * @license Apache-2.0
   */
 .bootstrap-switch {
@@ -1889,7 +1875,7 @@ fieldset[disabled] .btn-neutral.active {
     color: #9A9A9A;
 }
 
-/*      Navbar with icons            */
+
 .navbar-icons.navbar .navbar-brand {
     margin-top: 12px;
     margin-bottom: 12px;
@@ -3285,7 +3271,7 @@ fieldset[disabled] .btn-neutral.active {
     }
 }
 
-/*          Changes for small display      */
+
 @media (max-width: 991px) {
     .main-panel {
         width: 100%;
