@@ -17,7 +17,7 @@ if ($conn->connect_error) {
       $course_id = $row["course_id"];
       $course_name = $row["course_name"];
       $course_description = $row["course_description"];
-      $course_image ="lectureDashboard/BS3/uploads/".$row["course_image"];
+      $course_image ="lectureDashboard/Code/uploads/".$row["course_image"];
       $course_type = $row["course_type"];
       $course_price = $row["course_price"];
   }

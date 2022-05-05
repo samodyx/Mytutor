@@ -38,7 +38,7 @@ if($count>=1){
         
         $_SESSION['student_id']=$userid;
     $_SESSION['student_username']=$username;
-    header("location:../../studentDashboard/BS3/table.php");
+    header("location:../../studentDashboard/Code/table.php");
     
 }
 else{
@@ -76,14 +76,14 @@ else{
         }
         
         else{
-            header("location:../../lectureDashboard/BS3/studentlist.php");
+            header("location:../../lectureDashboard/Code/studentlist.php");
         }
 
         
         
         $_SESSION['lecturerid']=$userid;
         $_SESSION['lecturer_username']=$username;
-        // header("location:../../lectureDashboard/BS3/studentlist.php");
+        // header("location:../../lectureDashboard/Code/studentlist.php");
         
     }
     
@@ -112,7 +112,7 @@ else{
         
         $_SESSION['adminid']=$userid;
         $_SESSION['admin_username']=$username;
-        header("location:../../adminDashboard/BS3/allstudent.php");
+        header("location:../../adminDashboard/Code/allstudent.php");
     }
     
     else{

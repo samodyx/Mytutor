@@ -31,13 +31,9 @@ session_start();
     <meta name="viewport" content="width=device-width" />
 
 
-   <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link href="assets/css/animate.min.css" rel="stylesheet"/>
-
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />>
     <link href="assets/css/light-bootstrap-dashboard.css?v=1.4.0" rel="stylesheet"/>
-
-
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
@@ -75,14 +71,14 @@ session_start();
                     <p>Course List</p>
                 </a>
             </li>
-            <li class="active">
-                <a href="coursematerials.php">
+            <li>
+            <a href="coursematerials.php">
                     <i class="pe-7s-folder"></i>
                     <p>Course Materials</p>
                 </a>
             </li>
-            <li >
-                <a href="livelectures.php">  <!--update this link to Mytutor link--> 
+            <li class="active">
+                <a href="#">  <!--update this link to Mytutor link--> 
                     <i class="pe-7s-video"></i>
                     <p>Live</p>
                 </a>
@@ -124,7 +120,7 @@ session_start();
                     </div>
                     <div class="content table-responsive table-full-width">
                     <?php
-                                        $result = mysqli_query($conn,"SELECT lesson.lesson_name, course.course_name, lesson.lesson_materials
+                                        $result = mysqli_query($conn,"SELECT lesson.lesson_name, course.course_name, lesson.lesson_link
                                         FROM lesson
                                         INNER JOIN course
                                         ON lesson.course_id=course.course_id;
@@ -140,9 +136,7 @@ session_start();
 
                                                             <th>Lesson Name</th>
                                                             <th>Course Name</th>
-                                                            <th>Lesson Materials</th>
-                                                            <th colspan="1">Actions</th>
-
+                                                            <th>Live Lecture Link</th>
                           
 
 
@@ -153,21 +147,9 @@ session_start();
                         <tr>
                         <td><?php echo $row["lesson_name"]; ?></td>
                         <td><?php echo $row["course_name"]; ?></td>
-                        <td><?php echo $row["lesson_materials"]; ?></td>
-                        <td>  <a href="../../lectureDashboard/BS3/uploads/pdf/<?php echo $row['lesson_materials']?>" class="btn btn-download" target="_blank">Download</a></td>
-
-
-
-
-
+                        <td><?php echo $row["lesson_link"]; ?></td>
                         <?php
-                               
-
-
-                               
-
-
-                               
+                                
                                 }
                                 ?>
                                 </table>
@@ -185,36 +167,19 @@ session_start();
         </div>
 
 
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                               Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script> <a href="../index.php">Mytutor</a>, made with love for a better web
-                </p>
-            </div>
+<footer class="footer">
+          <div class="container-fluid">
+            <nav class="pull-left">
+             </nav>
+            <p class="copyright pull-right">
+              &copy;
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              <a href="../index.php">Mytutor</a>, made with
+              love for a better web
+            </p>
+          </div>
         </footer>
 
     </div>

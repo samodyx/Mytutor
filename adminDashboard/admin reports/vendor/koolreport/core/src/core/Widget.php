@@ -88,9 +88,9 @@ class Widget
     protected $onReady;
 
     /**
-     * The base of the theme such as "bs3" or "bs4".
+     * The base of the theme such as "Code" or "bs4".
      * 
-     * @var string $themeBase The base of the theme such as "bs3" or "bs4".
+     * @var string $themeBase The base of the theme such as "Code" or "bs4".
      */
     protected $themeBase;
 
@@ -642,7 +642,7 @@ class Widget
         );
     }
     /**
-     * Get what the theme is base on "bs4","bs3" or null
+     * Get what the theme is base on "bs4","Code" or null
      * If there is themeBase set by the Widget, return it
      * if not then try to detect if theme is applied to report
      * If not, return null
