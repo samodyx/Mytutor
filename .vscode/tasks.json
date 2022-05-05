@@ -1,0 +1,31 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "watch",
+			"path": "Mytutor Live/Live Portal/",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: watch - Mytutor Live/Live Portal",
+			"detail": "nodemon --watch \"src/\" --exec \"node src/app.js\""
+		},
+		{
+			"type": "npm",
+			"script": "test",
+			"path": "Mytutor Live/Live Portal/",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "npm: test - Mytutor Live/Live Portal",
+			"detail": "echo \"Error: no test specified\" && exit 1"
+		},
+		{
+			"type": "npm",
+			"script": "start",
+			"path": "Mytutor Live/Live Portal/",
+			"problemMatcher": [],
+			"label": "npm: start - Mytutor Live/Live Portal",
+			"detail": "node src/app.js"
+		}
+	]
+}
