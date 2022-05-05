@@ -1,3 +1,23 @@
+<?php
+
+$server = "localhost:3308";
+$user = "root";
+$pass = "mytutor@123";
+$database = "mytutor";
+
+$conn = mysqli_connect($server, $user, $pass, $database);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+session_start();
+
+
+
+?>
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,31 +49,28 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+
 </head>
 <body>
 
-    <div class="wrapper">
-        <div class="sidebar" data-color="blue" data-image="assets/img/studentdashboard.jpg">
+<div class="wrapper">
+    <div class="sidebar" data-color="blue" data-image="assets/img/studentdashboard.jpg">
 
-    <!--   you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple" -->
-
-
-    <div class="sidebar-wrapper">
-    <div class="logo">
-          <label class="simple-text">  <?php
-          session_start();
+     	<div class="sidebar-wrapper">
+            <div class="logo">
+            <label class="simple-text">  <?php
+            
             echo "Welcome  ".$_SESSION['student_username'];
             ?>  </label>
-          </div>
+            </div>
 
-
-        <ul class="nav">
-            <li >
+            <ul class="nav">
+            <!-- <li class="active">
                 <a href="table.php">
                     <i class="pe-7s-graph"></i>
                     <p>Course Progress</p>
                 </a>
-            </li>
+            </li> -->
             <li>
                 <a href="user.php">
                     <i class="pe-7s-user"></i>
@@ -61,7 +78,7 @@
                 </a>
             </li>
             <li>
-                <a href="table.html">
+                <a href="table.php">
                     <i class="pe-7s-note2"></i>
                     <p>Course List</p>
                 </a>
@@ -72,16 +89,17 @@
                     <p>Course Materials</p>
                 </a>
             </li>
-            <li>
+            <li >
                 <a href="livelectures.php">  <!--update this link to Mytutor link--> 
-                    <i class="pe-7s-global"></i>
+                    <i class="pe-7s-video"></i>
                     <p>Live</p>
                 </a>
             </li>
         </ul>
+    	</div>
     </div>
-</div>
-<div class="main-panel">
+
+    <div class="main-panel">
     <nav class="navbar navbar-default navbar-fixed">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -101,69 +119,79 @@
           </div>
         </nav>
 
+
         <div class="content">
         <div class="container-fluid">
               <div class="row">
                 <div class="col-md-12">
                   <div class="card">
                     <div class="header">
-                      <h4 class="title">All Lessons</h4>
+                      <h4 class="title">All Live Lectures</h4>
 
-                   
-                    <select class="box" aria-label="Default select example">
-                      <option selected>-Select the lesson-</option>
-                      <?php
-                             while($row = mysqli_fetch_assoc($result2)) {
-                             echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
-                              }
-                              ?>
-                                          </select>
-                                         </ul>
+                  </ul>
                     </div>
                     <div class="content table-responsive table-full-width">
                     <?php
-$result = mysqli_query($conn,"SELECT lesson_id,course_name,lesson_link,lesson_materials FROM lesson");
-?>
-<?php
-if (mysqli_num_rows($result) > 0) {
-?>
-<table class='table table-bordered table-striped'>
-<th>Lesson ID</th>
-                          <th>Lesson Name</th>
-                          <th>Course Name</th>
-                          <th colspan="2">Actions</th>
-<?php
-$i=0;
-while($row = mysqli_fetch_array($result)) {
-?>
-<tr>
-<td><?php echo $row["lesson_id"]; ?></td>
-<td><?php echo $row["course_name"]; ?></td>
-<td><?php echo $row["lesson_link"]; ?></td>
-<td><?php echo $row["lesson_materials"]; ?></td>
-<td>
-                              <button class="btn btn-warning">Delete</button>
-                              <button class="btn btn-info">Update</button>
-                            </td>
-</tr>
+                                        $result = mysqli_query($conn,"SELECT lesson.lesson_name, course.course_name, lesson.lesson_materials
+                                        FROM lesson
+                                        INNER JOIN course
+                                        ON lesson.course_id=course.course_id;
+                                        ");
 
-<?php
-$i++;
-}
-?>
-</table>
-<?php
-}
-else{
-echo "No lesson found";
-}
-?>
+
+
+                                    ?>
+                                    <?php
+                                    if (mysqli_num_rows($result) > 0) {
+                                    ?>
+                                    <table class='table table-bordered table-striped'>
+
+                                                            <th>Lesson Name</th>
+                                                            <th>Course Name</th>
+                                                            <th>Lesson Materials</th>
+                                                            <th colspan="1">Actions</th>
+
+                          
+
+
+                        <?php
+                        
+                        while($row = mysqli_fetch_array($result)) {
+                        ?>
+                        <tr>
+                        <td><?php echo $row["lesson_name"]; ?></td>
+                        <td><?php echo $row["course_name"]; ?></td>
+                        <td><?php echo $row["lesson_materials"]; ?></td>
+                        <td>  <a href="../../lectureDashboard/BS3/uploads/pdf/<?php echo $row['lesson_materials']?>" class="btn btn-download" target="_blank">Download</a></td>
+
+
+
+
+
+                        <?php
+                               
+
+
+                               
+
+
+                               
+                                }
+                                ?>
+                                </table>
+                                <?php
+                }
+                else{
+                echo "No lesson found";
+                }
+                ?>
                                           </div>
                   </div>
                 </div>
               </div>
             </div>
         </div>
+
 
         <footer class="footer">
             <div class="container-fluid">
@@ -197,7 +225,6 @@ echo "No lesson found";
             </div>
         </footer>
 
-
     </div>
 </div>
 
@@ -208,20 +235,6 @@ echo "No lesson found";
     <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 
-	<!--  Charts Plugin -->
-	<script src="assets/js/chartist.min.js"></script>
-
-    <!--  Notifications Plugin    -->
-    <script src="assets/js/bootstrap-notify.js"></script>
-
-    <!--  Google Maps Plugin    -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-
-    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
-	<script src="assets/js/light-bootstrap-dashboard.js?v=1.4.0"></script>
-
-	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
-	<script src="assets/js/demo.js"></script>
 
 
 </html>

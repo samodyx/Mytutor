@@ -87,40 +87,37 @@ $conn->close();
           </div>
 
           <ul class="nav">
-            <li>
-              <a href="table.php">
-                <i class="pe-7s-users"></i>
-                <p>Students</p>
-              </a>
-            </li>
+            <!-- <li class="active">
+                <a href="table.php">
+                    <i class="pe-7s-graph"></i>
+                    <p>Course Progress</p>
+                </a>
+            </li> -->
             <li class="active">
-              <a href="user.php">
-                <i class="pe-7s-user"></i>
-                <p>User Profile</p>
-              </a>
-            </li>
-           
-            <li>
-              <a href="#">
-                <i class="pe-7s-note"></i>
-                <p>Lessons Materials</p>
-              </a>
+                <a href="user.php">
+                    <i class="pe-7s-user"></i>
+                    <p>User Profile</p>
+                </a>
             </li>
             <li>
-              <a href="#">
-                <!--update this link to Mytutor link-->
-                <i class="pe-7s-video"></i>
-                <p>Live Lectures</p>
-              </a>
+                <a href="table.php">
+                    <i class="pe-7s-note2"></i>
+                    <p>Course List</p>
+                </a>
             </li>
             <li>
-              <a href="lessons.php">
-                <i class="pe-7s-notebook"></i>
-                <p>Lessons</p>
-              </a>
+            <a href="coursematerials.php">
+                    <i class="pe-7s-folder"></i>
+                    <p>Course Materials</p>
+                </a>
             </li>
-           
-          </ul>
+            <li>
+                <a href="livelectures.php">  <!--update this link to Mytutor link--> 
+                    <i class="pe-7s-video"></i>
+                    <p>Live Lectures</p>
+                </a>
+            </li>
+        </ul>
         </div>
       </div>
       <div class="main-panel">

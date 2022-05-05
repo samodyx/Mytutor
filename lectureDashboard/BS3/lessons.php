@@ -130,7 +130,7 @@ session_start();
             </div>
           </div>
         </nav>
-<!-- ADD COURSES -->
+
           
 <!-- ADD LESSON -->
           <div class="container-fluid">
@@ -160,7 +160,7 @@ session_start();
                               <?php
                              while($row = mysqli_fetch_assoc($result)) {
                              echo "<option value='".$row["course_id"]."'>".$row["course_name"]."</option>";
-                              }
+                              }     
                               ?>
                           </select>
                           </td>
@@ -203,6 +203,7 @@ session_start();
                               <table class='table table-bordered table-striped'>
                               <th>Lesson ID</th>
                             <th>Lesson Name</th>
+                            <th>Lesson Link</th>
                             <th>Lesson Materials</th>
 
                             <th colspan="1">Actions</th>
@@ -213,6 +214,7 @@ session_start();
                                 <tr>
                                 <td><?php echo $row["lesson_id"]; ?></td>
                                 <td><?php echo $row["lesson_name"]; ?></td>
+                                <td><?php echo $row["lesson_link"]; ?></td>
                                 <td><?php echo $row["lesson_materials"]; ?></td>
                                 <td>
                                 <a href="deletelesson.php?id=<?php echo $row['lesson_id']?>" class="btn btn-warning">Delete</a>

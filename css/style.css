@@ -1,4 +1,3 @@
-/********** Template CSS **********/
 
 :root {
     --primary: #06BBCC;
@@ -44,6 +43,7 @@
 .imageCourse{
     display: block !important;
     width: 100% !important;
+    object-fit: cover;
 }
 .btn {
     font-family: 'Nunito', sans-serif;

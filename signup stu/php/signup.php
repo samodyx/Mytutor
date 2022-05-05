@@ -10,24 +10,6 @@ $dob=$_POST["dob"];
 $password=$_POST["password"];
 
 
-/*INSERT INTO `mytutor`.`student`
-(`student_id`,
-`student_username`,
-`student_name`,
-`student_conno`,
-`student_email`,
-`student_birthday`,
-`student_password`)
-VALUES
-(<{student_id: }>,
-<{student_username: }>,
-<{student_name: }>,
-<{student_conno: }>,
-<{student_email: }>,
-<{student_birthday: }>,
-<{student_password: }>);
-*/
-
 $sql="INSERT INTO student(student_username,student_name,student_conno,student_email,student_birthday,student_password) VALUES ('$username','$fullname','$contactnumber','$email','$dob','$password')";
 
 

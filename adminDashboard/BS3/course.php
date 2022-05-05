@@ -214,9 +214,7 @@ session_start();
       <td><?php echo $row["course_name"]; ?></td>
       <td><?php echo $row["course_type"]; ?></td>
       <td>
-      <a href="deletecourse.php">                      
-      <button class="btn btn-warning">Delete</button>
-      </a>  
+      <a href="deletecourse.php?id=<?php echo $row['course_id']?>" class="btn btn-warning">Delete</a>
                               <button class="btn btn-info">Update</button>
                             </td>
                           </tr>

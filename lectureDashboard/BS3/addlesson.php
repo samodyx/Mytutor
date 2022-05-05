@@ -4,7 +4,7 @@ if(isset($_POST['save']))
 {	 
 	 $course_id = $_POST['course_name'];
 	 $lesson_name = $_POST['lesson_name'];
-	//  $lesson_link = $_POST['lesson_link'];
+	 $lesson_link = $_POST['lesson_link'];
 	//  $lesson_materials = $_POST['lesson_materials'];
 
 
@@ -26,19 +26,13 @@ if(isset($_POST['save']))
  
 	 if(move_uploaded_file($file_loc,$folder.$final_file))
 	 {
-	 $sql = "INSERT INTO lesson(course_id,lesson_name,lesson_materials,course_name)
-	 VALUES ('$course_id','$lesson_name','$final_file',$course_id)";
-	 if (mysqli_query($conn, $sql)) {
-		// die("New record created successfully !") ;
-	 } else {
-		echo "Error: " . $sql . "
-" . mysqli_error($conn);
-	 }
+	 $sql = "INSERT INTO lesson(course_id,lesson_name,lesson_materials,lesson_link)
+	 VALUES ('$course_id','$lesson_name','$final_file','$lesson_link')";
 		 if (mysqli_query($conn,$sql));
 		 ?>
 		 <script>
 		 alert('successfully uploaded');
-		header("location: lessons.php");
+		 // window.location.href='index.php?success';
 		 </script>
 		 <?php
 	 }

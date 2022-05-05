@@ -60,22 +60,22 @@
                     <p>User Profile</p>
                 </a>
             </li>
-            <li>
-                <a href="table.html">
+            <li class="active">
+                <a href="table.php">
                     <i class="pe-7s-note2"></i>
                     <p>Course List</p>
                 </a>
             </li>
             <li>
-                <a href="#">
+            <a href="coursematerials.php">
                     <i class="pe-7s-folder"></i>
                     <p>Course Materials</p>
                 </a>
             </li>
             <li>
-                <a href="#">  <!--update this link to Mytutor link--> 
-                    <i class="pe-7s-global"></i>
-                    <p>Live</p>
+                <a href="livelecturess.php">  <!--update this link to Mytutor link--> 
+                    <i class="pe-7s-video"></i>
+                    <p>Live Lectures</p>
                 </a>
             </li>
         </ul>
@@ -90,6 +90,11 @@
             <div class="collapse navbar-collapse">
 
               <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a href="../../index.php">
+                    <p>Home Page</p>
+                  </a> 
+                </li>
                  <li>
                   <a href="logout.php">
                     <p>Log out</p>

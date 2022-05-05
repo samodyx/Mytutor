@@ -36,7 +36,10 @@ session_start();
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    
     <link rel="stylesheet" href="css/Signup.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 
 </head>
 
@@ -68,19 +71,19 @@ session_start();
                                             <span>or</span>
                                         </p>
                                     </div> 
-                                    <form action="./php/signup.php" method="POST" class="signup-form" name="signValidation" id="signupForm">
+                                    <form action="#" method="POST" class="signup-form" name="signValidation" id="signupForm">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="label" for="name">Full Name</label>
-                                                    <input type="text" class="form-control" name="fullname" required>
+                                                    <label class="label" for="fullname">Full Name <span>(Full name is Required)</span></label>
+                                                    <input type="text" class="form-control" name="fullname" id="fullname">
                                                     <span class="error"></span>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label class="label" for="name">Username</label>
-                                                    <input type="text" class="form-control" name="username">
+                                                    <label class="label" for="username">Username <span>(Username is Required)</span></label>
+                                                    <input type="text" class="form-control" name="username" id="username">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -140,7 +143,7 @@ session_start();
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary submit p-3">Create an account as Lecture</button>
+                                                <input class="submit" type="submit" value="Create an account as Lecture">
                                                 </div>
                                             </div>
                                         </div>
@@ -159,26 +162,17 @@ session_start();
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>   
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script type="text/javascript">
-        var $formvalidate = $('#signupForm');
+        // var $formvalidate = $('#signupForm');
         $(document).ready(function(){
-            if($formvalidate.lenght){
-                $formvalidate.validate({
-                    rules:{
-                        required:true,
-                    },
-                    messages:{
-                        required:'This field is required'
-                    }
-                })
-            }
+            $('#signupForm').validate();
         })
     </script>
 
