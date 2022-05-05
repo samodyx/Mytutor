@@ -163,7 +163,7 @@ $result = $conn->query($sql);
     </div>
     <!-- Categories Start -->
 
-
+<body>
     <!-- Courses Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -215,9 +215,9 @@ $course_price = $row["course_price"];
                 </div>
 
                 <?php
-}
+                                    }
 
-?>
+                                    ?>
 
             </div>
         </div>

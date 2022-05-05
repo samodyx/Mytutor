@@ -98,7 +98,7 @@ session_start();
                 <p>Courses</p>
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="#">
                 <i class="pe-7s-note"></i>
                 <p>Lessons</p>
@@ -107,18 +107,17 @@ session_start();
 
             <li >
               <a href="#">
-                <!--update this link to Mytutor link-->
                 <i class="pe-7s-graph2"></i>
                 <p>Charts</p>
               </a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
       
       <div class="main-panel">
         
-        <nav class="navbar navbar-default navbar-fixed">
+      <nav class="navbar navbar-default navbar-fixed">
           <div class="container-fluid">
             <div class="navbar-header">
         
@@ -126,6 +125,11 @@ session_start();
             <div class="collapse navbar-collapse">
 
               <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a href="../../index.php">
+                    <p>Home Page</p>
+                  </a> 
+                </li>
                  <li>
                   <a href="logout.php">
                     <p>Log out</p>
@@ -160,7 +164,7 @@ session_start();
                       <tbody>
                         <tr>
                           <td><input type="text" name="course_name" ></td>
-                          <td><input type="text" name="course_description" ></td>
+                          <td><textarea type="text" name="course_description" rows="5" > </textarea></td>
                           <td><div class="form-group" >
 
                             <input type="file" class="form-control-file" name="course_image">

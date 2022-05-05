@@ -16,7 +16,7 @@ include_once 'config.php';
     $course_type = $_POST['course_type'];
     $course_price = $_POST['course_price'];
 	if ($error === 0) {
-		if ($img_size > 500000) {
+		if ($img_size > 5242880 ) {
 			$em = "Sorry, your file is too large.";
 		    echo $em;
 		}else {

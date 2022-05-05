@@ -12,6 +12,19 @@ if (!$conn) {
 }
 
 session_start();
+
+$sql = "SELECT * FROM student";
+if ($result=mysqli_query($conn,$sql)) {
+$rowcountstudent=mysqli_num_rows($result); 
+}
+$sql = "SELECT * FROM course";
+if ($result=mysqli_query($conn,$sql)) {
+$rowcountcourse=mysqli_num_rows($result);
+}
+$sql = "SELECT * FROM lecturer";
+if ($result=mysqli_query($conn,$sql)) {
+$rowcountlecture=mysqli_num_rows($result);
+}
 ?>
 
 
@@ -81,20 +94,20 @@ session_start();
                 <p>Courses</p>
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="#">
                 <i class="pe-7s-note"></i>
                 <p>Lessons</p>
               </a>
-            </li>
+            </li> -->
 
-            <li>
+            <!-- <li>
               <a href="../admin reports/reports/course.php">
-                <!--update this link to Mytutor link-->
+                
                 <i class="pe-7s-graph2"></i>
                 <p>Charts</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
     </div>
@@ -123,7 +136,58 @@ session_start();
             </div>
           </div>
         </nav>
+     
+          <div class="container-fluid">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 col-sm-6">
+                  <div class="card-box bg-blue">
+                    <div class="inner">
+                      <h3> <label class="simple-text">  <?php
+             echo $rowcountstudent;
+              ?>  </label></h3>
+                      <p>Students Enrolled</p>
+                    </div>
+                    <div class="icon">
+                      <i class="fa faIcon fa-graduation-cap" aria-hidden="true"></i>
+                    </div>
+                     </div>
+                </div>
 
+                <div class="col-lg-4 col-sm-6">
+                  <div class="card-box bg-green">
+                    <div class="inner">
+                    <h3> <label class="simple-text">  <?php
+              echo $rowcountlecture;
+              ?>  </label></h3>
+                      <p>Lecturers Registered</p>
+                    </div>
+                    <div class="icon">
+                    <i class="fa faIcon fa-users" aria-hidden="true"></i>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                  <div class="card-box bg-orange">
+                    <div class="inner">
+                    <h3> <label class="simple-text">  <?php
+                          echo $rowcountcourse;
+              ?>  </label></h3>
+                      <p>Number of Courses</p>
+                    </div>
+                    <div class="icon">
+                    <i class="fa faIcon fa-book" aria-hidden="true"></i>
+                    </div>
+                   </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                 </div>
+              </div>
+            </div>
+           </div>
+        
         <script type="text/javascript">
 $(document).ready(function(){
 $('[data-toggle="tooltip"]').tooltip();   

@@ -87,19 +87,19 @@ session_start();
                 <p>Courses</p>
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="#">
                 <i class="pe-7s-note"></i>
                 <p>Lessons</p>
               </a>
-            </li>
+            </li> -->
 
-            <li>
+            <!-- <li>
               <a href="#">
                 <i class="pe-7s-graph2"></i>
                 <p>Charts</p>
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
     </div>
@@ -113,6 +113,11 @@ session_start();
             <div class="collapse navbar-collapse">
 
               <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a href="../../index.php">
+                    <p>Home Page</p>
+                  </a> 
+                </li>
                  <li>
                   <a href="logout.php">
                     <p>Log out</p>

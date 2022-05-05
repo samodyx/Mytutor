@@ -150,7 +150,7 @@ session_start();
 
                                     </form>
                                     <div class="w-100">
-                                        <p class="mt-4">I'm already a member! <a href="login\login.html">Log In</a></p>
+                                        <p class="mt-4">I'm already a member! <a href="../login/login.html">Log In</a></p>
                                     </div>
                                 </div>
                             </div>
