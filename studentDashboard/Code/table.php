@@ -60,7 +60,7 @@
                 </a>
             </li>
             <li>
-                <a href="livelecturess.php">  <!--update this link to Mytutor link--> 
+                <a href="livelectures.php">  <!--update this link to Mytutor link--> 
                     <i class="pe-7s-video"></i>
                     <p>Live Lectures</p>
                 </a>

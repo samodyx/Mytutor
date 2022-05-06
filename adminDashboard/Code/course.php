@@ -206,7 +206,7 @@ session_start();
 <th>Course ID</th>
   <th>Course Name</th>
       <th>Course Type</th>
-          <th colspan="2">Actions</th>
+          <th colspan="1">Actions</th>
               <?php
               $i=0;
               while($row = mysqli_fetch_array($result)) {
@@ -217,7 +217,6 @@ session_start();
       <td><?php echo $row["course_type"]; ?></td>
       <td>
       <a href="deletecourse.php?id=<?php echo $row['course_id']?>" class="btn btn-warning">Delete</a>
-                              <button class="btn btn-info">Update</button>
                             </td>
                           </tr>
                           <?php

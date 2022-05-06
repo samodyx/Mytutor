@@ -47,7 +47,7 @@ session_start();
       <div
         class="sidebar"
         data-color="azure"
-        data-image="assets/img/adminDashboard.png"
+        data-image="assets/img/admindashboard.png"
       >
 
 
@@ -148,7 +148,7 @@ if (mysqli_num_rows($result) > 0) {
 <td>Email </td>
 <td>Contact Number</td>
 <td>Current Status</td>
-<th colspan="2">Actions</th>
+<th colspan="3">Actions</th>
 </tr>
 <?php
 $i=0;
@@ -160,8 +160,10 @@ while($row = mysqli_fetch_array($result)) {
 <td><?php echo $row["lecturer_email"]; ?></td>
 <td><?php echo $row["lecturer_conno"]; ?></td>
 <td><?php echo $row["status"]; ?></td>
-<td> <a href="adminapproval.php?id=<?php echo  $row["lecturer_id"]?>" class="btn btn-info" type="submit" name="Approve" value="submit">Approve</a> </td>
-<td> <a href="admindecline.php?id=<?php echo  $row["lecturer_id"]?>" class="btn btn-danger" type="submit" name="Decline" value="submit">Decline</a> </td>
+<td> <a href="adminapproval.php?id=<?php echo  $row["lecturer_id"]?>" class="btn btn-success" type="submit" name="Approve" value="submit">Approve</a> </td>
+<td> <a href="admindecline.php?id=<?php echo  $row["lecturer_id"]?>" class="btn btn-secondary" type="submit" name="Decline" value="submit">Decline</a> </td>
+<td> <a href="admindelete.php?id=<?php echo  $row["lecturer_id"]?>" class="btn btn-danger" type="submit" name="Delete" value="submit">Delete</a> </td>
+
 </tr>
 <?php
 $i++;

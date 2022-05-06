@@ -25,10 +25,10 @@ $sql = "UPDATE lecturer SET `status`='Decline' WHERE lecturer_id=$id";
 
 if ($conn->query($sql) === TRUE) {
   
-    echo "Lecture has been declined successfully";
+  echo "<script type='text/javascript'>alert('Lecture has been declined successfully');</script>";
 
 } else {
-  echo "Error updating record: " . $conn->error;
+  echo "<script type='text/javascript'>alert('Error updating record: ');</script>" . $conn->error;
 }
 
 ?>

@@ -119,6 +119,11 @@ $conn->close();
             <div class="collapse navbar-collapse">
 
               <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a href="../../index.php">
+                    <p>Home Page</p>
+                  </a> 
+                </li>
                  <li>
                   <a href="logout.php">
                     <p>Log out</p>
@@ -191,7 +196,7 @@ $conn->close();
                               type="password"
                               class="form-control"
                               placeholder="New Password"
-                              name="Password"
+                              name="Password" required
                             />
                           </div>
                         </div>
@@ -201,7 +206,7 @@ $conn->close();
                             <input
                               type="password"
                               class="form-control"
-                              placeholder="Confrim New Password"
+                              placeholder="Confrim New Password" required
                              
                             />
                           </div>
@@ -227,7 +232,7 @@ $conn->close();
                               type="date"
                               class="form-control"
                               placeholder="Birthday"
-                              name="Birthday"
+                              name="Birthday" required
                               >
                           </div>
                         </div>

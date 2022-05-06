@@ -84,7 +84,7 @@ session_start();
             <li >
                 <a href="livelectures.php">  <!--update this link to Mytutor link--> 
                     <i class="pe-7s-video"></i>
-                    <p>Live</p>
+                    <p>Live Lectures</p>
                 </a>
             </li>
         </ul>
@@ -100,6 +100,11 @@ session_start();
             <div class="collapse navbar-collapse">
 
               <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a href="../../index.php">
+                    <p>Home Page</p>
+                  </a> 
+                </li>
                  <li>
                   <a href="logout.php">
                     <p>Log out</p>
@@ -118,7 +123,7 @@ session_start();
                 <div class="col-md-12">
                   <div class="card">
                     <div class="header">
-                      <h4 class="title">All Live Lectures</h4>
+                      <h4 class="title">All Course Materials</h4>
 
                   </ul>
                     </div>
@@ -157,17 +162,8 @@ session_start();
                         <td>  <a href="../../lectureDashboard/Code/uploads/pdf/<?php echo $row['lesson_materials']?>" class="btn btn-download" target="_blank">Download</a></td>
 
 
-
-
-
                         <?php
-                               
-
-
-                               
-
-
-                               
+                     
                                 }
                                 ?>
                                 </table>

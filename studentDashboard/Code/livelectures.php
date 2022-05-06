@@ -80,7 +80,7 @@ session_start();
             <li class="active">
                 <a href="#">  <!--update this link to Mytutor link--> 
                     <i class="pe-7s-video"></i>
-                    <p>Live</p>
+                    <p>Live Lectures</p>
                 </a>
             </li>
         </ul>
@@ -96,6 +96,11 @@ session_start();
             <div class="collapse navbar-collapse">
 
               <ul class="nav navbar-nav navbar-right">
+              <li>
+                  <a href="../../index.php">
+                    <p>Home Page</p>
+                  </a> 
+                </li>
                  <li>
                   <a href="logout.php">
                     <p>Log out</p>

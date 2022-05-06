@@ -120,7 +120,7 @@ if ($conn->connect_error) {
                     <h6 class="section-title bg-white text-start text-primary pe-3"><?php echo $course_type ?></h6>
                     <h1 class="mb-4"><?php echo $course_name ?></h1>
                     <p class="mb-4"><?php echo $course_description ?></p>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="#">Join Now</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="courseEnrollment/entrollment.html">Join Now</a>
                 </div>
             </div>
         </div>

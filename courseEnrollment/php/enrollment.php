@@ -16,9 +16,9 @@ $subject = "You have successfully Enrolled at Mytutor";
 $body = "
 Dear ".$username."
 
-You have sucessfully enrolled to at  Mytutor.
+You have sucessfully enrolled to a course at  Mytutor.
 
-This email serves as a confirmation that you have enroll to the above mentioned course.
+This email serves as a confirmation that you have enroll to the course.
 Happy Learning!
 
 Regards,

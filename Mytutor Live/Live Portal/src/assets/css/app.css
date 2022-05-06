@@ -70,7 +70,7 @@
 
 
 .remote-video{
-    width:100%;
+    width: 50%;
     height:auto;
     max-height: 90vh;
 }
@@ -159,7 +159,7 @@
 .record-option{
     height: 200px;
     border-radius: 10%;
-    border: 1px solid #06BBCC;
+    border: 3px solid #0AA1DD;
     cursor: pointer;
     padding: 10px;
     vertical-align: middle;
@@ -179,11 +179,11 @@
 
 
 .custom-modal-content {
-    background-color: #ffffff;
+    background-color: #E8F9FD;
     margin: 15% auto;
     padding: 20px;
-    border: 1px solid #06BBCC;
-    width: 80%;
+    border: 1px solid transparent;
+    width: 30%;
 }
 
 
@@ -233,7 +233,10 @@
         z-index: 1000;
     }
 }
+.nav{
+background-color: #0AA1DD !important;
 
+}
 .roomCreated{
     margin-left: auto !important;
     margin-right: 0 !important;
@@ -259,5 +262,5 @@
     box-shadow: 0px 0px 5px 2px rgba(185, 185, 185, 0.5);
     padding: 10px;
     text-align: center;
-    background-color: #9bebed;
+    background-color: #0AA1DD;
 }

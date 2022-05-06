@@ -172,7 +172,7 @@ $course_price = $row["course_price"];
                                         </p><br>
                                         <a class="btn btn-primary" href="coursedetails.php" role="button">Read more</a>
                                    
-                                    <button type="button" class="btn btn-info">Join now</button>
+                                        <a class="btn btn-info" href="courseEnrollment/entrollment.html" role="button">Join now</a>
                                          </p>
                                         
                                     </div>
